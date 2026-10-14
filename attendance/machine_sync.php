@@ -1,6 +1,6 @@
 <?php
 /**
- * Sync Armor Fire biometric punches
+ * Sync biometric punches
  */
 
 require_once __DIR__ . '/../config/app.php';
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (string) ($_POST['action'] ?? '') =
 
 $machines = fetchBiometricMachines(false);
 $stats = biometricDashboardStats();
-$selectedName = 'All Armor Fire machines';
+$selectedName = 'All machines';
 foreach ($machines as $m) {
     if ((int) $m['id'] === $machineId) {
         $selectedName = (string) $m['machine_name'];
@@ -82,7 +82,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="form-page-card">
         <div class="form-page-header">
             <h1>Sync Machine Attendance</h1>
-            <p>Pull Armor Fire punches from linked machines via Ocean HRMS</p>
+            <p>Pull company punches from linked machines via Ocean HRMS</p>
         </div>
 
         <div class="bio-stat-grid bio-stat-grid-3">
@@ -128,7 +128,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <div class="form-group span-2">
                         <label>Machine</label>
                         <select name="machine_id" class="form-control">
-                            <option value="0">All Armor Fire machines</option>
+                            <option value="0">All machines</option>
                             <?php foreach ($machines as $m): ?>
                                 <option value="<?php echo (int) $m['id']; ?>"
                                     <?php echo $machineId === (int) $m['id'] ? 'selected' : ''; ?>
@@ -160,7 +160,7 @@ require_once __DIR__ . '/../includes/header.php';
                     <strong>How sync works</strong>
                     <ol>
                         <li>Triggers machine pull on Ocean HRMS (for linked Ocean Machine ID)</li>
-                        <li>Imports Armor Fire company punches into Machine Wise logs</li>
+                        <li>Imports company punches into Machine Wise logs</li>
                         <li>Matches employees by code / biometric ID</li>
                     </ol>
                 </div>

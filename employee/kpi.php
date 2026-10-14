@@ -80,7 +80,7 @@ foreach ($slots as $s) {
         $openHours++;
     }
 }
-$companyName = function_exists('getCompanyName') ? getCompanyName() : 'ARMOR';
+$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Fishfa Rubbers Limited';
 $dateDisp = function_exists('formatDateDisplay') ? formatDateDisplay($date) : formatDateDisplay($date);
 $shiftDisp = trim((string) ($sheet['shift_in'] ?? $built['shift_in']) . ' TO ' . (string) ($sheet['shift_out'] ?? $built['shift_out']));
 

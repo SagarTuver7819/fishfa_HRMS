@@ -1,8 +1,8 @@
 <?php
 /**
  * DB Sync — apply schema + seeds on live (Admin only).
- * Local:  http://localhost/armor_new_hrms/db_sync.php
- * Live:   https://armor-hrms.oceanhub.co.in/db_sync.php
+ * Local:  http://localhost/fishfa_rubber/db_sync.php
+ * Live:   https://<your-hrms-domain>/db_sync.php
  * Bulk employee logins (Office Staff):
  *   .../db_sync.php?bulk_logins=1
  *   Username = Employee Code · Password = FirstName@123
@@ -29,8 +29,6 @@ require_once __DIR__ . '/includes/recruitment_helper.php';
 require_once __DIR__ . '/includes/permission_helper.php';
 require_once __DIR__ . '/includes/department_head_helper.php';
 require_once __DIR__ . '/includes/canteen_helper.php';
-require_once __DIR__ . '/sql/seed_contractor_masters.php';
-
 requireAdmin();
 
 $pageTitle = 'DB Sync';
@@ -88,7 +86,7 @@ try {
     $log[] = 'Attendance flex: late/early columns (is_late, is_early, flex_seq, penalty_leave, shift_start/end) — 1h window, 2 flex/month, Half PL → Half LWP.';
 
     ensureBiometricTables($conn);
-    seedArmorBiometricMachinesOnce($conn);
+    seedDefaultBiometricMachinesOnce($conn);
     $log[] = 'Biometric machines ready (tables + one-time default seed if empty; delete will not recreate).';
 
     ensureLeaveTables($conn);
@@ -120,7 +118,7 @@ try {
 
     require_once __DIR__ . '/includes/company_content_helper.php';
     ensureCompanyContentTables($conn);
-    $log[] = 'Company History + Vision/Mission/Core Values content ready (seeded Armor Fire text).';
+    $log[] = 'Company History + Vision/Mission/Core Values content ready (seeded Fishfa Rubbers text).';
 
     ensureRecruitmentTables($conn);
     $log[] = 'Recruitment tables ready (applications, education, experience + uploads).';
@@ -158,19 +156,6 @@ try {
 
     $iconUpdated = syncDepartmentIcons($conn);
     $log[] = 'Department dashboard icons updated: ' . $iconUpdated . ' row(s).';
-
-    $seed = seedContractorProductMasters($conn);
-    if ($seed['ok']) {
-        $log[] = 'Contractor grades: inserted ' . $seed['grades_inserted'] . ', active ' . $seed['grades_active'] . '.';
-        $log[] = 'Contractor products: inserted ' . $seed['products_inserted']
-            . ', updated ' . $seed['products_updated']
-            . ', skipped ' . $seed['products_skipped']
-            . ', active ' . $seed['products_active'] . '.';
-    } else {
-        $ok = false;
-        $log[] = 'Product seed: ' . $seed['error'];
-    }
-
     $checks = [
         'sub_departments table' => dbSyncHasTable($conn, 'sub_departments'),
         'employees.sub_department_id' => dbSyncHasColumn($conn, 'employees', 'sub_department_id'),

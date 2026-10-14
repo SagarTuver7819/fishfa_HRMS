@@ -1,7 +1,7 @@
 <?php
 /**
  * Contractor Manage — tables, lists, and Operations Rate List calculations
- * Logic matches the Armor Steel contractor modules (qty × rate, R, OT, Foundry).
+ * Contractor piece-rate logic (qty × rate, R, OT).
  */
 
 require_once __DIR__ . '/../config/database.php';
@@ -371,7 +371,7 @@ function daysInMonthNum($month, $year)
 }
 
 /**
- * Same formulas as Armor Steel Operations Rate List JS.
+ * Same formulas as the Operations Rate List JS.
  */
 function calculateContractorRow($operation, $rate, $otRate, $rejRate, array $days)
 {

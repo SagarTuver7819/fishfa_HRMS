@@ -13,7 +13,7 @@ function getCompanyDocumentBranding()
 {
     $company = trim((string) getCompanyName());
     if ($company === '') {
-        $company = 'Armor Fire';
+        $company = 'Fishfa Rubbers Limited';
     }
 
     $logo = getLoginLogo();
@@ -74,7 +74,7 @@ function companyDocPrintCss()
     align-items: flex-start;
     gap: 14px;
     padding-bottom: 12px;
-    border-bottom: 3px solid #d2232a;
+    border-bottom: 3px solid #0c54a0;
     margin-bottom: 14px;
 }
 .cdoc-header-logo {
@@ -93,7 +93,7 @@ function companyDocPrintCss()
 .cdoc-header-text .cdoc-company {
     margin: 0 0 6px;
     font-size: 22px;
-    color: #b91c1c;
+    color: #0c54a0;
     font-family: Calibri, Candara, Segoe UI, Arial, Helvetica, sans-serif;
     font-weight: 800;
     line-height: 1.2;
@@ -111,7 +111,7 @@ function companyDocPrintCss()
 .cdoc-footer {
     margin-top: 22px;
     padding-top: 10px;
-    border-top: 2px solid #d2232a;
+    border-top: 2px solid #0c54a0;
     font-size: 10.5px;
     line-height: 1.45;
     color: #475569;

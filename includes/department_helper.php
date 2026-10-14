@@ -1,6 +1,6 @@
 <?php
 /**
- * Canonical Armor Fire departments + duplicate merge / alias resolution.
+ * Canonical Fishfa Rubbers departments (reclaim rubber / rCB plant) + duplicate merge / alias resolution.
  */
 
 require_once __DIR__ . '/department_icons.php';
@@ -8,44 +8,38 @@ require_once __DIR__ . '/department_icons.php';
 function canonicalDepartmentsCatalog()
 {
     return [
-        ['ADMINISTRATION', 'fa-landmark', '#5B6CFF', 1],
-        ['HUMAN RESOURCE MANAGEMENT', 'fa-users', '#E85D75', 2],
+        ['ADMINISTRATION', 'fa-landmark', '#1E56A0', 1],
+        ['HUMAN RESOURCE MANAGEMENT', 'fa-users', '#0C54A0', 2],
         ['ACCOUNTS AND FINANCE', 'fa-file-invoice-dollar', '#2ECC71', 3],
-        ['COLLECTION', 'fa-hand-holding-dollar', '#F39C12', 4],
-        ['SALES & MARKETING - BACK OFFICE', 'fa-headset', '#9B59B6', 5],
-        ['SALES & MARKETING - ON FIELD', 'fa-handshake', '#1ABC9C', 6],
-        ['IT AND NETWORKING', 'fa-network-wired', '#3498DB', 7],
-        ['TENDER', 'fa-file-contract', '#E67E22', 8],
-        ['PRODUCT COMPLIANCE', 'fa-clipboard-list', '#14B8A6', 9],
-        ['QA AND QC', 'fa-clipboard-check', '#16A085', 10],
-        ['QMS', 'fa-certificate', '#0D9488', 11],
-        ['NPD', 'fa-lightbulb', '#F1C40F', 12],
-        ['DESIGN', 'fa-ruler-combined', '#8E44AD', 13],
-        ['PRODUCTION', 'fa-industry', '#E74C3C', 14],
-        ['PURCHASE', 'fa-cart-shopping', '#2980B9', 15],
-        ['STORE', 'fa-warehouse', '#D35400', 16],
-        ['LABORATORY', 'fa-flask', '#27AE60', 17],
-        ['CORE', 'fa-cubes', '#7F8C8D', 18],
-        ['MELTING 1', 'fa-fire', '#C0392B', 19],
-        ['MELTING 2', 'fa-fire-flame-curved', '#E74C3C', 20],
-        ['CUTTING', 'fa-scissors', '#34495E', 21],
-        ['GRINDING', 'fa-gear', '#95A5A6', 22],
-        ['LATHE', 'fa-gears', '#2C3E50', 23],
-        ['CNC', 'fa-microchip', '#1ABC9C', 24],
-        ['BUFF', 'fa-star', '#F39C12', 25],
-        ['CLEANING', 'fa-broom', '#3498DB', 26],
-        ['ASSEMBLY 1 & COATING', 'fa-layer-group', '#9B59B6', 27],
-        ['ASSEMBLY 2', 'fa-object-group', '#8E44AD', 28],
-        ['ASSEMBLY 3 RRL & FLEXIBLE', 'fa-diagram-project', '#6C5CE7', 29],
-        ['ASSEMBLY 4 ALARM & DELUGE VALVE', 'fa-bell', '#E17055', 30],
-        ['SPRINKLER', 'fa-shower', '#00CEC9', 31],
-        ['ARGON', 'fa-atom', '#0984E3', 32],
-        ['MAINTENANCE', 'fa-wrench', '#FD79A8', 33],
-        ['CANTEEN', 'fa-utensils', '#FDCB6E', 34],
-        ['DISPATCH', 'fa-truck', '#00B894', 35],
-        ['TRANSPORT', 'fa-truck-fast', '#636E72', 36],
-        ['BUTTERFLY VALVE', 'fa-circle-dot', '#00B894', 37],
-        ['DRUM', 'fa-drum', '#6C5CE7', 38],
+        ['SALES & MARKETING - DOMESTIC', 'fa-handshake', '#1ABC9C', 4],
+        ['EXPORT & INTERNATIONAL MARKETING', 'fa-earth-asia', '#0984E3', 5],
+        ['IT AND NETWORKING', 'fa-network-wired', '#3498DB', 6],
+        ['PURCHASE', 'fa-cart-shopping', '#2980B9', 7],
+        ['STORE', 'fa-warehouse', '#D35400', 8],
+        ['QA AND QC', 'fa-clipboard-check', '#16A085', 9],
+        ['LABORATORY / R&D', 'fa-flask', '#27AE60', 10],
+        ['COMPLIANCE & CERTIFICATION', 'fa-certificate', '#0D9488', 11],
+        ['EHS (ENVIRONMENT, HEALTH & SAFETY)', 'fa-leaf', '#00B894', 12],
+        ['PRODUCTION PLANNING', 'fa-calendar-check', '#6C5CE7', 13],
+        ['RAW MATERIAL YARD', 'fa-dumpster', '#7F8C8D', 14],
+        ['SORTING & CUTTING', 'fa-scissors', '#34495E', 15],
+        ['CRACKING & GRINDING', 'fa-gear', '#95A5A6', 16],
+        ['DEVULCANIZATION', 'fa-temperature-high', '#E74C3C', 17],
+        ['MIXING', 'fa-blender', '#9B59B6', 18],
+        ['REFINING', 'fa-layer-group', '#8E44AD', 19],
+        ['STRAINER', 'fa-filter', '#F39C12', 20],
+        ['BUTYL RECLAIM', 'fa-circle-dot', '#1E56A0', 21],
+        ['EPDM RECLAIM', 'fa-ring', '#2C3E50', 22],
+        ['WHOLE TIRE & NATURAL TUBE RECLAIM', 'fa-life-ring', '#636E72', 23],
+        ['rCB / PYROLYSIS PLANT', 'fa-industry', '#2D3436', 24],
+        ['PACKING', 'fa-box', '#E67E22', 25],
+        ['DISPATCH & LOGISTICS', 'fa-truck', '#00B894', 26],
+        ['MECHANICAL MAINTENANCE', 'fa-wrench', '#FD79A8', 27],
+        ['ELECTRICAL', 'fa-bolt', '#F1C40F', 28],
+        ['BOILER & UTILITY', 'fa-fire-burner', '#C0392B', 29],
+        ['SECURITY', 'fa-shield-halved', '#5B6CFF', 30],
+        ['HOUSEKEEPING', 'fa-broom', '#3498DB', 31],
+        ['CANTEEN', 'fa-utensils', '#FDCB6E', 32],
     ];
 }
 
@@ -73,24 +67,41 @@ function departmentAliasMap()
         'ACCOUNT' => 'ACCOUNTS AND FINANCE',
         'ACCOUNTS AND FINACE' => 'ACCOUNTS AND FINANCE',
         'FINANCE' => 'ACCOUNTS AND FINANCE',
-        'SALES AND MARKETING' => 'SALES & MARKETING - BACK OFFICE',
-        'SALES MARKETING BACK OFFICE' => 'SALES & MARKETING - BACK OFFICE',
-        'SALES MARKETING ON FIELD' => 'SALES & MARKETING - ON FIELD',
-        'SALES BUSINESS DEVELOPMENT' => 'SALES & MARKETING - ON FIELD',
-        'DIGITAL MARKETING' => 'SALES & MARKETING - BACK OFFICE',
+        'SALES AND MARKETING' => 'SALES & MARKETING - DOMESTIC',
+        'SALES' => 'SALES & MARKETING - DOMESTIC',
+        'MARKETING' => 'SALES & MARKETING - DOMESTIC',
+        'EXPORT' => 'EXPORT & INTERNATIONAL MARKETING',
+        'EXPORTS' => 'EXPORT & INTERNATIONAL MARKETING',
+        'INTERNATIONAL MARKETING' => 'EXPORT & INTERNATIONAL MARKETING',
         'INFORMATION TECHNOLOGY' => 'IT AND NETWORKING',
         'IT NETWORKING' => 'IT AND NETWORKING',
         'IT AND NETWORK' => 'IT AND NETWORKING',
         'QAQC' => 'QA AND QC',
         'QA QC' => 'QA AND QC',
+        'QUALITY' => 'QA AND QC',
         'QUALITY ASSURANCE' => 'QA AND QC',
+        'QUALITY CONTROL' => 'QA AND QC',
+        'LAB' => 'LABORATORY / R&D',
+        'LABORATORY' => 'LABORATORY / R&D',
+        'R&D' => 'LABORATORY / R&D',
+        'EHS' => 'EHS (ENVIRONMENT, HEALTH & SAFETY)',
+        'SAFETY' => 'EHS (ENVIRONMENT, HEALTH & SAFETY)',
+        'ENVIRONMENT' => 'EHS (ENVIRONMENT, HEALTH & SAFETY)',
+        'PPC' => 'PRODUCTION PLANNING',
+        'GRINDING' => 'CRACKING & GRINDING',
+        'CRACKER' => 'CRACKING & GRINDING',
+        'DEVULCANIZER' => 'DEVULCANIZATION',
+        'REFINER' => 'REFINING',
+        'PYROLYSIS' => 'rCB / PYROLYSIS PLANT',
+        'RCB' => 'rCB / PYROLYSIS PLANT',
+        'DISPATCH' => 'DISPATCH & LOGISTICS',
+        'LOGISTICS' => 'DISPATCH & LOGISTICS',
+        'TRANSPORT' => 'DISPATCH & LOGISTICS',
+        'MAINTENANCE' => 'MECHANICAL MAINTENANCE',
+        'UTILITY' => 'BOILER & UTILITY',
+        'BOILER' => 'BOILER & UTILITY',
         'STORE AND PURCHASE' => 'PURCHASE',
         'STORE PURCHASE' => 'PURCHASE',
-        'BUTTERFLY' => 'BUTTERFLY VALVE',
-        'BUTTER FLY VALVE' => 'BUTTERFLY VALVE',
-        'BUTTERFLY VALVE DEPARTMENT' => 'BUTTERFLY VALVE',
-        'DRUM DEPARTMENT' => 'DRUM',
-        'DRUMS' => 'DRUM',
     ];
 
     $map = [];
@@ -104,7 +115,7 @@ function departmentAliasMap()
 }
 
 /**
- * Map any department label to one of the 34 canonical names, or empty if unknown.
+ * Map any department label to one of the canonical names, or empty if unknown.
  */
 function resolveCanonicalDepartmentName($name)
 {
@@ -288,17 +299,6 @@ function mergeDuplicateDepartments($conn)
         }
     }
 
-    // Also reactivate common variants of Butterfly / Drum if inactive
-    $conn->query(
-        "UPDATE departments SET status = 1
-         WHERE status = 0
-           AND (
-                UPPER(department_name) LIKE '%BUTTERFLY%'
-             OR UPPER(department_name) = 'DRUM'
-             OR UPPER(department_name) LIKE 'DRUM %'
-           )"
-    );
-
     $seenCanonical = [];
     foreach ($rows as $row) {
         $id = (int) $row['id'];
@@ -368,7 +368,7 @@ function mergeDuplicateDepartments($conn)
         ->fetch_assoc()['c'];
 
     if ($merged === 0 && $deactivated === 0) {
-        $log[] = 'Canonical departments ensured (incl. BUTTERFLY VALVE, DRUM). Active: ' . $active . '.';
+        $log[] = 'Canonical departments ensured. Active: ' . $active . '.';
     } else {
         $log[] = "Done: {$merged} merge(s), {$deactivated} deactivated. Active departments: {$active}.";
     }

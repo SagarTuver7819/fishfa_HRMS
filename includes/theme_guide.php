@@ -3,7 +3,7 @@
  * Theme tokens + when to use sidebar
  * Include is optional — CSS already uses :root in style.css
  *
- * SETUP RULE (Armor Fire HRMS):
+ * SETUP RULE (Fishfa Rubbers HRMS):
  * ------------------------------------------------------------
  * 1) DASHBOARD (boxes only, NO sidebar)
  *    - Full-width card grid: Masters + Department Workspace + Reports
@@ -25,7 +25,7 @@
  *    Masters box → masters/index.php (hub boxes + sidebar)
  *
  * Brand colors (keep consistent):
- *    --brand: #d2232a
+ *    --brand: #0c54a0
  *    --ink:   #1a2332
  *    --page:  #f0f3f7
  */

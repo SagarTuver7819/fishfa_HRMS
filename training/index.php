@@ -130,7 +130,7 @@ $statusSaveUrl = app_url('training/status_save.php');
 
     <div class="form-page-card">
         <div class="form-page-header">
-            <h1><i class="fa-solid fa-chalkboard-user" style="color:#d2232a;"></i> Training</h1>
+            <h1><i class="fa-solid fa-chalkboard-user" style="color:#0c54a0;"></i> Training</h1>
             <p>
                 <strong>Sales &amp; Marketing – Back Office</strong> ane
                 <strong>Sales &amp; Marketing – On Field</strong> → Sales Training + Sales status.
@@ -222,7 +222,7 @@ $statusSaveUrl = app_url('training/status_save.php');
                         ?></td>
                         <td>
                             <?php if ($isSales): ?>
-                                <span class="status-badge" style="background:#fee2e2;color:#9f1239;">Sales Training</span>
+                                <span class="status-badge" style="background:#e7eef8;color:#08407c;">Sales Training</span>
                             <?php else: ?>
                                 <span class="status-badge" style="background:#dcfce7;color:#15803d;">General Induction</span>
                             <?php endif; ?>

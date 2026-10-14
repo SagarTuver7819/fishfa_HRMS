@@ -979,7 +979,7 @@ $denied = isset($_GET['msg']) && $_GET['msg'] === 'denied';
     $vBody = is_array($companyVision['body'] ?? null) ? $companyVision['body'] : companyContentDefaultVision();
     $popupCompanyName = trim((string) ($hBody['company'] ?? ''));
     if ($popupCompanyName === '') {
-        $popupCompanyName = 'Armor Steel Industries Pvt. Ltd.';
+        $popupCompanyName = getCompanyName();
     }
     $popupLogoSrc = $logoSrc ?? app_url('assets/images/logo-placeholder.svg');
 ?>
@@ -1017,7 +1017,7 @@ $denied = isset($_GET['msg']) && $_GET['msg'] === 'denied';
                         <p class="co-about-para"><?php echo companyContentBoldHtml((string) $p); ?></p>
                     <?php endforeach; ?>
                     <?php if (!empty($hBody['products_2021'])): ?>
-                        <h4><i class="fa-solid fa-industry"></i> 2021 Expansion Products</h4>
+                        <h4><i class="fa-solid fa-industry"></i> Industries We Serve</h4>
                         <div class="co-about-chips is-blue">
                             <?php foreach ($hBody['products_2021'] as $item): ?>
                                 <span><?php echo htmlspecialchars((string) $item); ?></span>
@@ -1025,7 +1025,7 @@ $denied = isset($_GET['msg']) && $_GET['msg'] === 'denied';
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($hBody['products_today'])): ?>
-                        <h4><i class="fa-solid fa-fire-extinguisher"></i> Products Today</h4>
+                        <h4><i class="fa-solid fa-recycle"></i> Our Products</h4>
                         <div class="co-about-chips is-red">
                             <?php foreach ($hBody['products_today'] as $item): ?>
                                 <span><?php echo htmlspecialchars((string) $item); ?></span>

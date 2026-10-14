@@ -65,13 +65,13 @@ require_once __DIR__ . '/../../includes/header.php';
 
             <div class="form-grid form-grid-2">
                 <div class="form-group">
-                    <label>2021 Expansion Products <small>(one per line)</small></label>
+                    <label>Industries We Serve <small>(one per line)</small></label>
                     <textarea name="products_2021" class="form-control" rows="7"><?php
                         echo htmlspecialchars(implode("\n", $body['products_2021'] ?? []));
                     ?></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Today Products <small>(one per line)</small></label>
+                    <label>Our Products <small>(one per line)</small></label>
                     <textarea name="products_today" class="form-control" rows="7"><?php
                         echo htmlspecialchars(implode("\n", $body['products_today'] ?? []));
                     ?></textarea>

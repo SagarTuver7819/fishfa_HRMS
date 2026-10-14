@@ -1,6 +1,6 @@
 <?php
 /**
- * Visiting Card — Armor Fire brand layout (Front + Back)
+ * Visiting Card — Fishfa Rubbers brand layout (Front + Back)
  * Single design · Print/PDF + Save Image
  */
 
@@ -68,10 +68,10 @@ if (!$rows) {
 }
 
 $companyName = trim((string) getCompanyName());
-if ($companyName === '' || strcasecmp($companyName, 'Armor Fire') === 0) {
-    $companyName = 'Armor Steel Industries Pvt. Ltd.';
+if ($companyName === '') {
+    $companyName = 'Fishfa Rubbers Limited';
 }
-$companyLegal = 'ARMOR STEEL INDUSTRIES PVT. LTD.';
+$companyLegal = strtoupper($companyName);
 
 $logoRel = '';
 if (function_exists('getLoginLogo')) {
@@ -83,8 +83,8 @@ if (($logoRel === '' || (function_exists('isCustomLogo') && !isCustomLogo($logoR
 $logoUrl = ($logoRel !== '' && function_exists('app_url')) ? app_url($logoRel) : '';
 
 $headerDetails = function_exists('getCompanyHeaderDetails') ? trim((string) getCompanyHeaderDetails()) : '';
-$companyWebsite = 'www.armorfire.in';
-$companyAddress = 'Plot no. 43-45, Lothada, Rajkot, Gujarat - 360022';
+$companyWebsite = 'www.fishfarubbers.com';
+$companyAddress = 'Plot No. G-1357/58/59/60, Lodhika GIDC, Metoda, Rajkot, Gujarat - 360021';
 if ($headerDetails !== '') {
     if (preg_match('/(?:www\.|https?:\/\/)?([a-z0-9.-]+\.[a-z]{2,})/i', $headerDetails, $m)) {
         $companyWebsite = strtolower($m[0]);
@@ -144,8 +144,8 @@ function vc_email(array $e)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --fire: #d2232a;
-            --fire-dark: #b91c1c;
+            --fire: #0c54a0;
+            --fire-dark: #08407c;
             --ink: #111111;
             --muted: #64748b;
             --line: #e5e7eb;
@@ -194,7 +194,7 @@ function vc_email(array $e)
             display: inline-flex;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 6px 16px rgba(210, 35, 42, 0.25);
+            box-shadow: 0 6px 16px rgba(12, 84, 160, 0.25);
         }
         .vc-print-group .vc-btn {
             border-radius: 0;
@@ -238,7 +238,7 @@ function vc_email(array $e)
             padding: 6mm 9mm 5.5mm;
             text-align: center;
             background:
-                radial-gradient(95% 80% at -5% -10%, rgba(210, 35, 42, 0.22) 0%, rgba(210, 35, 42, 0.08) 35%, rgba(210, 35, 42, 0) 62%),
+                radial-gradient(95% 80% at -5% -10%, rgba(12, 84, 160, 0.22) 0%, rgba(12, 84, 160, 0.08) 35%, rgba(12, 84, 160, 0) 62%),
                 #ffffff;
         }
         .vc-card.front .logo-wrap {
@@ -286,7 +286,7 @@ function vc_email(array $e)
             display: grid;
             grid-template-columns: 1.25fr 0.9fr;
             background:
-                radial-gradient(90% 75% at 110% 115%, rgba(210, 35, 42, 0.2) 0%, rgba(210, 35, 42, 0.07) 38%, rgba(210, 35, 42, 0) 60%),
+                radial-gradient(90% 75% at 110% 115%, rgba(12, 84, 160, 0.2) 0%, rgba(12, 84, 160, 0.07) 38%, rgba(12, 84, 160, 0) 60%),
                 #ffffff;
         }
         .vc-card.back .info-col {
@@ -407,7 +407,7 @@ function vc_email(array $e)
 <body>
     <div class="vc-toolbar no-print">
         <div class="hint">
-            <strong><?php echo count($rows); ?></strong> card(s) · Front + Back · Armor Fire design
+            <strong><?php echo count($rows); ?></strong> card(s) · Front + Back · Fishfa Rubbers design
         </div>
         <div class="vc-actions">
             <a class="vc-btn vc-btn-secondary" href="<?php echo vc_h($backUrl); ?>">← Back</a>
@@ -441,7 +441,7 @@ function vc_email(array $e)
                                 <?php if ($logoUrl !== ''): ?>
                                     <img src="<?php echo vc_h($logoUrl); ?>" alt="<?php echo vc_h($companyName); ?>">
                                 <?php else: ?>
-                                    <div class="logo-fallback">ARMOR <span>FIRE</span></div>
+                                    <div class="logo-fallback">FISHFA <span>RUBBERS</span></div>
                                 <?php endif; ?>
                             </div>
                             <div class="divider"></div>
@@ -485,7 +485,7 @@ function vc_email(array $e)
                                 <?php if ($logoUrl !== ''): ?>
                                     <img src="<?php echo vc_h($logoUrl); ?>" alt="">
                                 <?php else: ?>
-                                    <div class="brand-fallback">ARMOR<span>FIRE</span></div>
+                                    <div class="brand-fallback">FISHFA<span>RUBBERS</span></div>
                                 <?php endif; ?>
                             </div>
                         </div>

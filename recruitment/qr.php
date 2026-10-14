@@ -18,7 +18,7 @@ if (!isAdmin() && !isHR() && !(function_exists('isStaffUser') && isStaffUser()) 
 
 ensureRecruitmentTables();
 $applyUrl = recruitmentApplyUrl();
-$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Armor Fire';
+$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Fishfa Rubbers Limited';
 
 $logoPath = function_exists('getLoginLogo') ? getLoginLogo() : '';
 if (!$logoPath && function_exists('getCompanyLogo')) {
@@ -115,7 +115,7 @@ require_once __DIR__ . '/../includes/header.php';
     gap: 14px;
     margin-bottom: 18px;
     padding-bottom: 14px;
-    border-bottom: 3px solid #d2232a;
+    border-bottom: 3px solid #0c54a0;
     background: #ffffff !important;
 }
 .rec-qr-poster-logo {
@@ -130,7 +130,7 @@ require_once __DIR__ . '/../includes/header.php';
     display: block;
     font-size: 15px;
     font-weight: 800;
-    color: #b91c1c !important;
+    color: #08407c !important;
     line-height: 1.25;
 }
 .rec-qr-poster-brand span {

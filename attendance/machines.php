@@ -1,6 +1,6 @@
 <?php
 /**
- * Armor Fire — Biometric Machines list
+ * Biometric Machines list
  */
 
 require_once __DIR__ . '/../config/app.php';
@@ -14,7 +14,7 @@ requireAccess('attendance', 'view');
 ensureBiometricTables();
 // Lock one-time seed (so delete never comes back, even after db_sync)
 $__bioLock = getDBConnection();
-seedArmorBiometricMachinesOnce($__bioLock);
+seedDefaultBiometricMachinesOnce($__bioLock);
 $__bioLock->close();
 
 $toast = '';
@@ -88,7 +88,7 @@ require_once __DIR__ . '/../includes/header.php';
 
     <div class="form-page-card">
         <div class="form-page-header">
-            <h1>Biometric Machines — Armor Fire</h1>
+            <h1>Biometric Machines</h1>
             <p>Link machines · Sync punches · View machine-wise attendance</p>
         </div>
 

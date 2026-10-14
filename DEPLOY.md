@@ -1,14 +1,14 @@
-# Armor Fire HRMS — Git + Live Deploy
+# Fishfa Rubbers HRMS — Git + Live Deploy
 
-**Live subdomain:** https://armor-hrms.oceanhub.co.in/  
-**GitHub:** https://github.com/SagarTuver7819/armor_fire_hrms
+**Live subdomain:** https://your-hrms-domain.com/  
+**GitHub:** https://github.com/SagarTuver7819/fishfa_HRMS
 
 ---
 
 ## 1) Local → GitHub push
 
 ```bash
-cd c:\xampp\htdocs\armor_new_hrms
+cd c:\xampp\htdocs\fishfa_rubber
 git add .
 git status
 git commit -m "Your message"
@@ -21,10 +21,10 @@ Important:
 
 ---
 
-## 2) Live deploy — armor-hrms.oceanhub.co.in
+## 2) Live deploy — your-hrms-domain.com
 
 ### A. cPanel / Hosting
-1. Subdomain confirm: `armor-hrms.oceanhub.co.in`
+1. Subdomain confirm: `your-hrms-domain.com`
 2. Document root = project folder (jya `index.php` che) — subdomain **root**, subfolder nahi
 3. PHP **8.0+** enable
 4. MySQL database + user create (note: DB name, user, password)
@@ -32,14 +32,13 @@ Important:
    - `sql/hrms_database.sql`
    - `sql/employees.sql`
    - `sql/masters.sql`
-6. Optional seed (test data): browser thi `sql/seed_masters.php` / `sql/seed_employees.php` (pachi delete kari do)
 
 ### B. Code upload (ek method choose karo)
 
 **Option 1 — Git (best)**
 ```bash
-cd /home/USER/armor-hrms.oceanhub.co.in   # your document root
-git clone https://github.com/SagarTuver7819/armor_fire_hrms.git .
+cd /home/USER/your-hrms-domain.com   # your document root
+git clone https://github.com/SagarTuver7819/fishfa_HRMS.git .
 # next updates:
 git pull origin main
 ```
@@ -52,7 +51,7 @@ git pull origin main
 
 ```
 APP_ENV=production
-APP_URL=https://armor-hrms.oceanhub.co.in
+APP_URL=https://your-hrms-domain.com
 APP_BASE_PATH=
 DB_HOST=localhost
 DB_PORT=3306
@@ -72,7 +71,7 @@ assets/uploads/logo/
 → writable (`755` or `775`)
 
 ### E. Login check
-- Open: https://armor-hrms.oceanhub.co.in/
+- Open: https://your-hrms-domain.com/
 - Admin: `admin` / `password123`
 - HR: `hr` / `password123`
 - Dashboard → Department → Employees / Masters
@@ -85,9 +84,9 @@ assets/uploads/logo/
 
 | Item | Local | Live |
 |------|-------|------|
-| URL | http://localhost/armor_new_hrms | https://armor-hrms.oceanhub.co.in |
-| APP_BASE_PATH | `/armor_new_hrms` | *(empty)* |
-| DB | XAMPP `armor_hrms` | hosting DB |
+| URL | http://localhost/fishfa_rubber | https://your-hrms-domain.com |
+| APP_BASE_PATH | `/fishfa_rubber` | *(empty)* |
+| DB | XAMPP `fishfa_rubber_hrms` | hosting DB |
 | Config | local `.env` | live `.env` |
 
 Code same — only `.env` alag.
@@ -96,21 +95,21 @@ Code same — only `.env` alag.
 
 ## 5) Troubleshooting live
 
-### CSS missing / plain HTML / links go to `/armor_new_hrms/...`
+### CSS missing / plain HTML / links go to `/fishfa_rubber/...`
 **Cause:** Live `.env` ma local values copy thai gaya.
 
 Server `.env` aa rite hova joiye:
 ```
 APP_ENV=production
-APP_URL=https://armor-hrms.oceanhub.co.in
+APP_URL=https://your-hrms-domain.com
 APP_BASE_PATH=
 ```
 
-- Open **https://armor-hrms.oceanhub.co.in/** (NOT `/armor_new_hrms/`)
+- Open **https://your-hrms-domain.com/** (NOT `/fishfa_rubber/`)
 - `.env` save pachi browser hard refresh: `Ctrl+F5`
 - Latest code: `git pull origin main` (production subdomain auto-fix included)
 
-### 404 on `/armor_new_hrms/`
+### 404 on `/fishfa_rubber/`
 Live par aa folder nathi — subdomain root j use karo.
 
 ---

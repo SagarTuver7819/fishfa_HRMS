@@ -157,7 +157,18 @@ $selectedRole = isset($_POST['login_as']) && in_array($_POST['login_as'], $uiRol
 <div class="login-bg" aria-hidden="true">
     <div class="login-bg-glow login-bg-glow-a"></div>
     <div class="login-bg-glow login-bg-glow-b"></div>
+    <div class="login-bg-glow login-bg-glow-c"></div>
     <div class="login-bg-grid"></div>
+    <div class="login-bg-sweep"></div>
+    <span class="login-bg-ring ring-1"></span>
+    <span class="login-bg-ring ring-2"></span>
+    <span class="login-bg-ring ring-3"></span>
+    <span class="login-bg-ring ring-4"></span>
+    <span class="login-bg-dot dot-1"></span>
+    <span class="login-bg-dot dot-2"></span>
+    <span class="login-bg-dot dot-3"></span>
+    <span class="login-bg-dot dot-4"></span>
+    <span class="login-bg-dot dot-5"></span>
 </div>
 
 <div class="login-center">
@@ -165,7 +176,7 @@ $selectedRole = isset($_POST['login_as']) && in_array($_POST['login_as'], $uiRol
         <span class="login-hub-badge">Command Hub</span>
 
         <header class="login-brand">
-            <p class="login-since">Since 2010</p>
+            <p class="login-since">Since 1971</p>
 
             <?php if ($hasCustomLogo): ?>
                 <div class="login-logo-wrap anim-logo">
@@ -176,23 +187,18 @@ $selectedRole = isset($_POST['login_as']) && in_array($_POST['login_as'], $uiRol
             <?php else: ?>
                 <div class="login-logo-wrap anim-logo">
                     <div class="login-logo-mark" aria-hidden="true">
-                        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="#d2232a" d="M60 8 L108 112 H88 L78 88 H42 L32 112 H12 Z"/>
-                            <path fill="#111111" d="M60 28 L74 64 H46 Z"/>
-                            <path fill="#d2232a" d="M60 42c-1.2 5-5 9-5 15a5 5 0 0 0 10 0c0-6-3.8-10-5-15z"/>
-                            <path fill="#f87171" d="M60 52c-.7 2.8-2.6 4.8-2.6 8a2.6 2.6 0 0 0 5.2 0c0-3.2-1.9-5.2-2.6-8z"/>
-                        </svg>
+                        <img src="assets/images/logo-placeholder.svg" alt="">
                     </div>
                 </div>
                 <div class="login-wordmark anim-wordmark">
-                    <span class="wm-armor">ARMOR</span>
-                    <span class="wm-fire">FIRE</span>
-                    <span class="wm-tag">Shield of Quality</span>
+                    <span class="wm-brand">FISHFA</span>
+                    <span class="wm-fire">RUBBERS</span>
+                    <span class="wm-tag">New Geometry of Rubber</span>
                 </div>
             <?php endif; ?>
 
             <h1 class="login-portal-title">Human Resource Management</h1>
-            <p class="login-tagline">Engineered for Safety · Precision ERP Node</p>
+            <p class="login-tagline">Creating Wealth from Waste · Precision ERP Node</p>
         </header>
 
         <?php if ($error !== ''): ?>

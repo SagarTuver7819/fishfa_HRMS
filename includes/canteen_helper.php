@@ -122,7 +122,7 @@ function canteenOrderUrl()
         return rtrim($override, '/');
     }
 
-    $liveBase = 'https://armor-hrms.oceanhub.co.in';
+    $liveBase = rtrim(trim((string) (function_exists('env') ? env('PUBLIC_APP_URL', '') : '')), '/');
     $appUrl = defined('APP_URL') ? rtrim((string) APP_URL, '/') : '';
     $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
     $isLocal = (
@@ -132,7 +132,7 @@ function canteenOrderUrl()
         || stripos($appUrl, 'localhost') !== false
         || stripos($appUrl, '127.0.0.1') !== false
     );
-    if ($isLocal) {
+    if ($isLocal && $liveBase !== '') {
         return $liveBase . '/' . $path;
     }
     return $appUrl . '/' . $path;

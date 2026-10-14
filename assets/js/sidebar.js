@@ -5,8 +5,8 @@
     var shell = document.getElementById('appShell');
     if (!shell) return;
 
-    var KEY = 'armor_sidebar_collapsed';
-    var ACC_KEY = 'armor_sidebar_acc';
+    var KEY = 'hrms_sidebar_collapsed';
+    var ACC_KEY = 'hrms_sidebar_acc';
     var toggleBtn = document.getElementById('sidebarToggle');
     var fabBtn = document.getElementById('sidebarFab');
     var headerBtn = document.getElementById('headerSidebarBtn');

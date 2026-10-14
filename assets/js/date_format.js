@@ -75,7 +75,7 @@
         if (!instance || !instance.calendarContainer) {
             return;
         }
-        instance.calendarContainer.classList.add('armor-fp');
+        instance.calendarContainer.classList.add('hrms-fp');
 
         var yearInput = instance.currentYearElement;
         if (yearInput) {
@@ -191,5 +191,5 @@
         boot();
     }
 
-    window.ArmorInitDates = initDateInputs;
+    window.HrmsInitDates = initDateInputs;
 })();

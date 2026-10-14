@@ -1,4 +1,4 @@
-# Armor Fire HRMS — PHP limits for large contractor ops grids + PDF uploads
+# Fishfa Rubbers HRMS — PHP limits for large contractor ops grids + PDF uploads
 <IfModule mod_php.c>
     php_value max_input_vars 20000
     php_value max_input_time 120

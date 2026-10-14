@@ -29,10 +29,10 @@ $row = getRecruitmentApplication($id) ?: $row;
 
 $brand = getCompanyDocumentBranding();
 $company = trim((string) $brand['company_name']);
-if ($company === '' || strcasecmp($company, 'Armor Fire') === 0) {
-    $company = 'Armor Steel Industries Pvt. Ltd.';
+if ($company === '') {
+    $company = 'Fishfa Rubbers Limited';
 }
-$companyShort = 'Armor Steel Industries Pvt. Ltd.';
+$companyShort = $company;
 
 $offerNo = trim((string) ($row['offer_letter_no'] ?? ($issued['offer_letter_no'] ?? '')));
 $offerDateRaw = !empty($row['offer_letter_date'])
@@ -95,7 +95,7 @@ $workLocation = $companyShort . ', Rajkot, Gujarat';
             font-size: 13px;
         }
         .bar button {
-            background: #d2232a;
+            background: #0c54a0;
             color: #fff;
             border: 0;
             padding: 8px 12px;
@@ -138,7 +138,7 @@ $workLocation = $companyShort . ', Rajkot, Gujarat';
         .cdoc-header-text .cdoc-company {
             font-size: 24px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             font-family: Calibri, Candara, Segoe UI, Arial, sans-serif;
             margin: 0 0 4px;
             line-height: 1.2;
@@ -353,7 +353,7 @@ $workLocation = $companyShort . ', Rajkot, Gujarat';
                 </p>
 
                 <p>
-                    We warmly welcome you to our Armor family and hope it will be the beginning of a long
+                    We warmly welcome you to our Fishfa family and hope it will be the beginning of a long
                     and mutually beneficial future ahead.
                 </p>
 

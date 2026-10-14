@@ -133,7 +133,7 @@ if (isset($_GET['done']) && !empty($_SESSION['canteen_done'])) {
 $departments = canteenDepartments($conn, $mode === 'employee');
 $conn->close();
 
-$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Armor Fire';
+$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Fishfa Rubbers Limited';
 $logoPath = function_exists('getLoginLogo') ? getLoginLogo() : '';
 $logoSrc = $logoPath;
 if ($logoSrc && strpos($logoSrc, 'http') !== 0 && strpos($logoSrc, '/') !== 0) {
@@ -169,24 +169,24 @@ $homeUrl = app_url('canteen/order.php');
         * { box-sizing: border-box; }
         body {
             margin: 0; min-height: 100vh; font-family: "Outfit", Segoe UI, Arial, sans-serif; color: #0f172a;
-            background: radial-gradient(circle at top, #fff1f2 0%, #f8fafc 45%, #eef2f7 100%);
+            background: radial-gradient(circle at top, #f3f7fc 0%, #f8fafc 45%, #eef2f7 100%);
         }
         .wrap { max-width: 480px; margin: 0 auto; padding: 18px 14px 28px; }
         .card {
             background: #fff; border-radius: 20px; padding: 20px 18px 22px;
             box-shadow: 0 14px 40px rgba(15, 23, 42, .08); border: 1px solid #f1f5f9;
         }
-        .brand { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 3px solid #d2232a; }
+        .brand { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 3px solid #0c54a0; }
         .brand img { width: 56px; height: 56px; object-fit: contain; }
-        .brand strong { display: block; font-size: 15px; font-weight: 800; color: #b91c1c; text-transform: uppercase; line-height: 1.2; }
+        .brand strong { display: block; font-size: 15px; font-weight: 800; color: #08407c; text-transform: uppercase; line-height: 1.2; }
         .brand span { display: block; font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: .08em; margin-top: 3px; }
         h1 { margin: 16px 0 4px; font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-        h1 i { color: #d2232a; }
+        h1 i { color: #0c54a0; }
         .back { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-size: 13px; font-weight: 700; color: #475569; text-decoration: none; }
-        .back:hover { color: #d2232a; }
+        .back:hover { color: #0c54a0; }
         .date-box {
             margin: 10px 0 16px; padding: 12px 14px; border-radius: 14px;
-            background: linear-gradient(135deg, #d2232a, #9f1239); color: #fff;
+            background: linear-gradient(135deg, #0c54a0, #063263); color: #fff;
         }
         .date-box small { display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
         .date-box b { display: block; font-size: 18px; margin-top: 2px; }
@@ -197,10 +197,10 @@ $homeUrl = app_url('canteen/order.php');
             display: flex; align-items: center; gap: 14px; padding: 16px; border-radius: 16px; text-decoration: none; color: #0f172a;
             border: 1.5px solid #e2e8f0; background: #fff; transition: border-color .15s, background .15s, transform .12s;
         }
-        .choice:hover { border-color: #d2232a; background: #fff5f5; }
+        .choice:hover { border-color: #0c54a0; background: #f3f7fc; }
         .choice:active { transform: scale(.98); }
         .choice .ico { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 23px; flex-shrink: 0; }
-        .choice.emp .ico { background: #fee2e2; color: #d2232a; }
+        .choice.emp .ico { background: #e3edf8; color: #0c54a0; }
         .choice.vis .ico { background: #e0f2fe; color: #0369a1; }
         .choice strong { display: block; font-size: 16.5px; }
         .choice small { display: block; font-size: 12.5px; color: #64748b; margin-top: 2px; line-height: 1.35; }
@@ -215,22 +215,22 @@ $homeUrl = app_url('canteen/order.php');
         .seg i { font-size: 20px; color: #64748b; }
         .seg strong { font-size: 15px; }
         .seg small { font-size: 11.5px; color: #64748b; }
-        .seg label.on { border-color: #d2232a; background: #fff5f5; }
-        .seg label.on i { color: #d2232a; }
+        .seg label.on { border-color: #0c54a0; background: #f3f7fc; }
+        .seg label.on i { color: #0c54a0; }
 
         .field { margin-bottom: 16px; }
         .field > label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: #334155; }
         .field > label .step {
             display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
-            background: #d2232a; color: #fff; font-size: 11px; margin-right: 6px;
+            background: #0c54a0; color: #fff; font-size: 11px; margin-right: 6px;
         }
         .fixed-dept { padding: 13px 14px; border-radius: 12px; background: #f1f5f9; font-weight: 700; font-size: 15px; color: #0f172a; border: 1.5px solid #e2e8f0; }
-        .fixed-dept i { color: #d2232a; margin-right: 6px; }
+        .fixed-dept i { color: #0c54a0; margin-right: 6px; }
         .input { width: 100%; height: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #e2e8f0; font: 500 15px "Outfit", sans-serif; color: #0f172a; background: #fff; }
-        .input:focus { outline: none; border-color: #d2232a; }
+        .input:focus { outline: none; border-color: #0c54a0; }
         .counter { display: flex; align-items: center; gap: 10px; }
         .counter button { width: 48px; height: 48px; border-radius: 12px; border: 1.5px solid #e2e8f0; background: #fff; font-size: 18px; color: #0f172a; cursor: pointer; flex-shrink: 0; }
-        .counter button:active { background: #fff5f5; border-color: #d2232a; }
+        .counter button:active { background: #f3f7fc; border-color: #0c54a0; }
         .counter .input { text-align: center; font-size: 20px; font-weight: 800; }
         .names { display: grid; gap: 8px; }
         .name-row { display: flex; align-items: center; gap: 8px; }
@@ -245,10 +245,10 @@ $homeUrl = app_url('canteen/order.php');
         .select2-container--default .select2-selection--single .select2-selection__rendered { line-height: 46px; padding-left: 14px; font-size: 15px; color: #0f172a; }
         .select2-container--default .select2-selection--single .select2-selection__arrow { height: 46px; right: 8px; }
         .select2-container--default.select2-container--focus .select2-selection--single,
-        .select2-container--default.select2-container--open .select2-selection--single { border-color: #d2232a; }
+        .select2-container--default.select2-container--open .select2-selection--single { border-color: #0c54a0; }
         .select2-search--dropdown .select2-search__field { height: 42px; border-radius: 10px; font-size: 16px; padding: 6px 10px; }
         .select2-results__option { padding: 10px 12px; font-size: 14px; }
-        .select2-container--default .select2-results__option--highlighted[aria-selected] { background: #d2232a; }
+        .select2-container--default .select2-results__option--highlighted[aria-selected] { background: #0c54a0; }
         .select2-dropdown { border-radius: 12px; border-color: #e2e8f0; overflow: hidden; }
         .meals { display: grid; gap: 10px; }
         .meal {
@@ -256,11 +256,11 @@ $homeUrl = app_url('canteen/order.php');
             border: 1.5px solid #e2e8f0; background: #fff; cursor: pointer; user-select: none;
             transition: border-color .15s, background .15s;
         }
-        .meal input { width: 22px; height: 22px; accent-color: #d2232a; flex-shrink: 0; }
+        .meal input { width: 22px; height: 22px; accent-color: #0c54a0; flex-shrink: 0; }
         .meal .ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 18px; flex-shrink: 0; }
         .meal strong { display: block; font-size: 15px; }
         .meal small { display: block; font-size: 12px; color: #64748b; }
-        .meal.on { border-color: #d2232a; background: #fff5f5; }
+        .meal.on { border-color: #0c54a0; background: #f3f7fc; }
         .meal.breakfast .ico { background: #fef3c7; color: #b45309; }
         .meal.lunch .ico { background: #dcfce7; color: #15803d; }
         .meal.dinner .ico { background: #e0e7ff; color: #4338ca; }
@@ -272,16 +272,16 @@ $homeUrl = app_url('canteen/order.php');
         .btn {
             width: 100%; border: 0; border-radius: 14px; padding: 15px; margin-top: 18px; cursor: pointer;
             font: 800 15px "Outfit", sans-serif; letter-spacing: .04em; text-transform: uppercase; color: #fff;
-            background: #d2232a; box-shadow: 0 10px 24px rgba(210, 35, 42, .3);
+            background: #0c54a0; box-shadow: 0 10px 24px rgba(12, 84, 160, .3);
             transition: background .2s, transform .12s;
         }
-        .btn:hover { background: #a51c22; }
+        .btn:hover { background: #0a4a8c; }
         .btn:active { transform: scale(.98); }
         .btn:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; }
         .alert { padding: 12px 14px; border-radius: 12px; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
         .alert.err { background: #fee2e2; color: #b91c1c; }
         .closed { text-align: center; padding: 18px 6px 6px; }
-        .closed i { font-size: 44px; color: #d2232a; }
+        .closed i { font-size: 44px; color: #0c54a0; }
         .closed h2 { margin: 12px 0 6px; font-size: 20px; }
         .closed p { margin: 0; color: #475569; font-size: 14px; line-height: 1.5; }
         .done { text-align: center; padding: 10px 4px 4px; }
@@ -293,7 +293,7 @@ $homeUrl = app_url('canteen/order.php');
         .done .who { font-size: 15px; font-weight: 700; color: #0f172a; }
         .done .sub { font-size: 13px; color: #475569; margin-top: 3px; }
         .done .chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
-        .done .chip { padding: 6px 12px; border-radius: 999px; background: #fff5f5; color: #b91c1c; font-weight: 700; font-size: 13px; border: 1px solid #fecaca; }
+        .done .chip { padding: 6px 12px; border-radius: 999px; background: #f3f7fc; color: #08407c; font-weight: 700; font-size: 13px; border: 1px solid #cfe0f3; }
         .done .namelist { text-align: left; margin: 10px auto 0; padding: 10px 14px; border-radius: 12px; background: #f8fafc; font-size: 13.5px; max-width: 320px; }
         .done .namelist ol { margin: 4px 0 0; padding-left: 20px; }
         .done p { color: #475569; font-size: 13px; }

@@ -60,7 +60,7 @@ if (isset($_GET['msg'])) {
         <div class="co-master-view-head">
             <div class="co-master-view-ico"><i class="fa-solid fa-book-open"></i></div>
             <div>
-                <p class="co-master-view-eyebrow"><?php echo htmlspecialchars((string) ($body['company'] ?? 'ARMOR FIRE')); ?></p>
+                <p class="co-master-view-eyebrow"><?php echo htmlspecialchars((string) ($body['company'] ?? 'FISHFA RUBBERS')); ?></p>
                 <h1><?php echo htmlspecialchars((string) ($body['heading'] ?? $title)); ?></h1>
                 <p>View · Employee login popup left section</p>
             </div>
@@ -72,7 +72,7 @@ if (isset($_GET['msg'])) {
             <?php endforeach; ?>
 
             <?php if (!empty($body['products_2021'])): ?>
-                <h3>2021 Expansion Products</h3>
+                <h3>Industries We Serve</h3>
                 <div class="co-about-chips is-blue">
                     <?php foreach ($body['products_2021'] as $item): ?>
                         <span><?php echo htmlspecialchars((string) $item); ?></span>
@@ -81,7 +81,7 @@ if (isset($_GET['msg'])) {
             <?php endif; ?>
 
             <?php if (!empty($body['products_today'])): ?>
-                <h3>Products Today</h3>
+                <h3>Our Products</h3>
                 <div class="co-about-chips is-red">
                     <?php foreach ($body['products_today'] as $item): ?>
                         <span><?php echo htmlspecialchars((string) $item); ?></span>

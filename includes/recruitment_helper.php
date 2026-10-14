@@ -261,13 +261,13 @@ if (!function_exists('ensureRecruitmentTables')) {
     {
         $path = 'recruitment/apply.php';
 
-        // Optional override in .env: RECRUITMENT_PUBLIC_URL=https://armor-hrms.oceanhub.co.in/recruitment/apply.php
+        // Optional override in .env: RECRUITMENT_PUBLIC_URL=https://<your-hrms-domain>/recruitment/apply.php
         $override = trim((string) (function_exists('env') ? env('RECRUITMENT_PUBLIC_URL', '') : ''));
         if ($override !== '') {
             return rtrim($override, '/');
         }
 
-        $liveBase = 'https://armor-hrms.oceanhub.co.in';
+        $liveBase = rtrim(trim((string) (function_exists('env') ? env('PUBLIC_APP_URL', '') : '')), '/');
         $appUrl = defined('APP_URL') ? rtrim((string) APP_URL, '/') : '';
         $host = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
         $isLocalHost = (
@@ -279,7 +279,7 @@ if (!function_exists('ensureRecruitmentTables')) {
         );
 
         // Fixed QR for phones must use live public URL (not localhost)
-        if ($isLocalHost) {
+        if ($isLocalHost && $liveBase !== '') {
             return $liveBase . '/' . $path;
         }
 

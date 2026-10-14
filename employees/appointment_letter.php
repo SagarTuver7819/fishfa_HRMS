@@ -37,10 +37,10 @@ $emp = getEmployeeById($id) ?: $emp;
 
 $brand = getCompanyDocumentBranding();
 $company = trim((string) $brand['company_name']);
-if ($company === '' || strcasecmp($company, 'Armor Fire') === 0) {
-    $company = 'Armor Steel Industries Pvt Ltd';
+if ($company === '') {
+    $company = 'Fishfa Rubbers Limited';
 }
-$companyShort = 'Armor Steel Industries Pvt Ltd';
+$companyShort = $company;
 
 $appointNo = trim((string) ($emp['appointment_letter_no'] ?? ($issued['appointment_letter_no'] ?? '')));
 $appointDateRaw = !empty($emp['appointment_letter_date'])
@@ -123,7 +123,7 @@ $h = function ($s) {
             font-family: Calibri, Segoe UI, Arial, sans-serif;
         }
         .bar button {
-            background: #d2232a;
+            background: #0c54a0;
             color: #fff;
             border: 0;
             padding: 8px 12px;
@@ -166,7 +166,7 @@ $h = function ($s) {
         .cdoc-header-text .cdoc-company {
             font-size: 24px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             font-family: Calibri, Candara, Segoe UI, Arial, sans-serif;
             margin: 0 0 3px;
             line-height: 1.2;

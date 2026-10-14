@@ -1,6 +1,6 @@
 <?php
 /**
- * Add / Edit biometric machine (Armor Fire)
+ * Add / Edit biometric machine
  */
 
 require_once __DIR__ . '/../config/app.php';
@@ -88,7 +88,7 @@ require_once __DIR__ . '/../includes/header.php';
     <div class="form-page-card">
         <div class="form-page-header">
             <h1><?php echo $isEdit ? 'Edit Biometric Machine' : 'Add Biometric Machine'; ?></h1>
-            <p>Armor Fire · API connection for punch sync</p>
+            <p>API connection for punch sync</p>
         </div>
 
         <?php if ($error !== ''): ?>
@@ -152,7 +152,7 @@ require_once __DIR__ . '/../includes/header.php';
                         <input type="number" name="ocean_machine_id" class="form-control" min="0"
                                value="<?php echo htmlspecialchars((string) ($form['ocean_machine_id'] ?? '')); ?>"
                                placeholder="Optional link to Ocean HRMS machine">
-                        <small>Used when triggering sync on Ocean (Armor company)</small>
+                        <small>Used when triggering sync on Ocean (this company)</small>
                     </div>
                 </div>
             </div>

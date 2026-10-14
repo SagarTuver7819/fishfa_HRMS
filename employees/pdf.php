@@ -38,7 +38,7 @@ if (!canAccess('employees', 'edit', $deptId) && !isAdmin() && !isHR()) {
 $brand = getCompanyDocumentBranding();
 $company = trim((string) ($brand['company_name'] ?? ''));
 if ($company === '') {
-    $company = 'Armor Fire';
+    $company = 'Fishfa Rubbers Limited';
     $brand['company_name'] = $company;
 }
 
@@ -279,7 +279,7 @@ if ($isHi && $genderDisp !== '') {
         .cdoc-header-text .cdoc-company {
             font-size: 20px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             font-family: Calibri, Candara, Segoe UI, Arial, sans-serif;
             margin: 0 0 3px;
             line-height: 1.1;

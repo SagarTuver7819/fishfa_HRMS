@@ -4,10 +4,10 @@
  * Looks for: project_root/.env
  */
 
-if (defined('ARMOR_ENV_LOADED')) {
+if (defined('HRMS_ENV_LOADED')) {
     return;
 }
-define('ARMOR_ENV_LOADED', true);
+define('HRMS_ENV_LOADED', true);
 
 $envFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . '.env';
 

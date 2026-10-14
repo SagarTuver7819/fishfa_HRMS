@@ -98,7 +98,7 @@ function ensureBiometricTables($conn = null)
 
     seedBiometricSyncDefaults($conn);
     // Do NOT auto-seed machines here — that recreated deleted machines on every page load.
-    // Defaults are seeded once only via seedArmorBiometricMachinesOnce() from db_sync.
+    // Defaults are seeded once only via seedDefaultBiometricMachinesOnce() from db_sync.
 
     if ($closeAfter) {
         $conn->close();
@@ -112,7 +112,7 @@ function seedBiometricSyncDefaults($conn)
         'ocean_app_key' => 'office@2016',
         'ocean_username' => 'admincrm@crmocean.com',
         'ocean_password' => 'Ocean@92',
-        'ocean_company_id' => '2',
+        'ocean_company_id' => '',
     ];
     foreach ($defaults as $k => $v) {
         $st = $conn->prepare(
@@ -124,16 +124,16 @@ function seedBiometricSyncDefaults($conn)
     }
 }
 
-function seedArmorBiometricMachines($conn)
+function seedDefaultBiometricMachines($conn)
 {
-    seedArmorBiometricMachinesOnce($conn);
+    seedDefaultBiometricMachinesOnce($conn);
 }
 
 /**
- * Seed default Armor machines ONCE only.
+ * Seed default machines ONCE only (none by default — add from Biometric Machines).
  * After first seed (or if any machine already exists / user deleted), never recreate.
  */
-function seedArmorBiometricMachinesOnce($conn)
+function seedDefaultBiometricMachinesOnce($conn)
 {
     seedBiometricSyncDefaults($conn);
 
@@ -161,50 +161,7 @@ function seedArmorBiometricMachinesOnce($conn)
         return;
     }
 
-    $machines = [
-        [
-            'machine_code' => 'ARMOR_OLD_CRM_SALARY',
-            'machine_name' => 'Old Crm Hrms To Crm',
-            'provider_type' => 'old_crm',
-            'api_url' => 'http://armorfire-crm.oceanhub.co.in/api/salary-logs',
-            'api_username' => 'admin',
-            'api_password' => '',
-            'corporate_id' => '',
-            'ip_address' => '127.0.0.1',
-            'port' => '80',
-            'ocean_machine_id' => 4,
-            'sync_interval_minutes' => 60,
-            'remarks' => 'Old CRM salary-logs pull (Armor)',
-        ],
-        [
-            'machine_code' => 'ARMOR_OLD_CRM_ATT',
-            'machine_name' => 'Old Crm',
-            'provider_type' => 'old_crm',
-            'api_url' => 'http://armorfire-crm.oceanhub.co.in/api/attendance-logs',
-            'api_username' => 'admin',
-            'api_password' => '',
-            'corporate_id' => '',
-            'ip_address' => '127.0.0.1',
-            'port' => '80',
-            'ocean_machine_id' => 3,
-            'sync_interval_minutes' => 60,
-            'remarks' => 'Old CRM attendance-logs pull (use HTTP; HTTPS SSL expired)',
-        ],
-        [
-            'machine_code' => 'ARMOR_EASYBIO',
-            'machine_name' => 'EASyBio',
-            'provider_type' => 'etimeoffice',
-            'api_url' => 'https://api.etimeoffice.com/api/',
-            'api_username' => 'ARMORSTEEL99',
-            'api_password' => '',
-            'corporate_id' => 'ARMORSTEEL99',
-            'ip_address' => '192.168.1.199',
-            'port' => '5005',
-            'ocean_machine_id' => 2,
-            'sync_interval_minutes' => 5,
-            'remarks' => 'Devi Electronic / eTimeOffice live biometric',
-        ],
-    ];
+    $machines = [];
 
     foreach ($machines as $m) {
         $code = $m['machine_code'];
@@ -374,7 +331,7 @@ function biometricOceanLogin()
     $username = biometricGetSetting('ocean_username', 'admincrm@crmocean.com');
     $password = biometricGetSetting('ocean_password', 'Ocean@92');
 
-    $cookieFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'armor_bio_ocean_cookies.txt';
+    $cookieFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'hrms_bio_ocean_cookies.txt';
     @unlink($cookieFile);
 
     [$code, $loginHtml] = biometricHttpRequest($base . '/login', $cookieFile);

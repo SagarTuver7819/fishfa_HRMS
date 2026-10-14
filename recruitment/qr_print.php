@@ -18,7 +18,7 @@ if (!isAdmin() && !isHR() && !(function_exists('isStaffUser') && isStaffUser()) 
 
 ensureRecruitmentTables();
 $applyUrl = recruitmentApplyUrl();
-$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Armor Fire';
+$companyName = function_exists('getCompanyName') ? getCompanyName() : 'Fishfa Rubbers Limited';
 
 $logoPath = function_exists('getLoginLogo') ? getLoginLogo() : '';
 if (!$logoPath && function_exists('getCompanyLogo')) {
@@ -78,7 +78,7 @@ $h = static function ($s) {
             font-family: inherit;
             font-size: 13px;
         }
-        .bar button.primary { background: #d2232a; }
+        .bar button.primary { background: #0c54a0; }
         .sheet {
             min-height: calc(100vh - 56px);
             display: flex;
@@ -101,7 +101,7 @@ $h = static function ($s) {
             gap: 14px;
             padding-bottom: 14px;
             margin-bottom: 18px;
-            border-bottom: 3px solid #d2232a;
+            border-bottom: 3px solid #0c54a0;
             background: #ffffff !important;
         }
         .logo {
@@ -115,7 +115,7 @@ $h = static function ($s) {
             display: block;
             font-size: 16px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             line-height: 1.2;
         }
         .brand span {

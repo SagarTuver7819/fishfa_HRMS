@@ -1,10 +1,10 @@
 -- =====================================================
--- Armor HRMS - Master Tables
+-- Fishfa Rubbers HRMS - Master Tables
 -- Safe to run multiple times (IF NOT EXISTS)
 -- Departments table already exists from hrms_database.sql
 -- =====================================================
 
-USE armor_hrms;
+USE fishfa_rubber_hrms;
 
 CREATE TABLE IF NOT EXISTS designations (
     id INT AUTO_INCREMENT PRIMARY KEY,

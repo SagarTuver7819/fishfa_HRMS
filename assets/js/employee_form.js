@@ -778,8 +778,8 @@
             var todayStr = dd + '-' + mm + '-' + yyyy;
             modal.hidden = false;
             document.body.classList.add('confirm-modal-open');
-            if (typeof window.ArmorInitDates === 'function') {
-                window.ArmorInitDates(modal);
+            if (typeof window.HrmsInitDates === 'function') {
+                window.HrmsInitDates(modal);
             }
             // Force flatpickr to show DD-MM-YYYY (re-open sync)
             if (effInp._flatpickr) {

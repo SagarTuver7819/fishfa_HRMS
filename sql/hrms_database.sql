@@ -1,10 +1,10 @@
 -- =====================================================
--- ARMOR HRMS - Database Setup
+-- FISHFA RUBBERS HRMS - Database Setup
 -- Import this file in phpMyAdmin or run via MySQL CLI
 -- =====================================================
 
-CREATE DATABASE IF NOT EXISTS armor_hrms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE armor_hrms;
+CREATE DATABASE IF NOT EXISTS fishfa_rubber_hrms CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE fishfa_rubber_hrms;
 
 -- -----------------------------------------------------
 -- Table: departments (Department Master)
@@ -86,7 +86,7 @@ INSERT INTO departments (department_name, icon_class, icon_color, sort_order) VA
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS company_settings (
     id INT PRIMARY KEY DEFAULT 1,
-    company_name VARCHAR(150) NOT NULL DEFAULT 'Armor Fire',
+    company_name VARCHAR(150) NOT NULL DEFAULT 'Fishfa Rubbers',
     company_logo VARCHAR(255) DEFAULT NULL,
     login_logo VARCHAR(255) DEFAULT NULL,
     dashboard_logo VARCHAR(255) DEFAULT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS company_settings (
 ) ENGINE=InnoDB;
 
 INSERT INTO company_settings (id, company_name, company_logo, login_logo, dashboard_logo)
-VALUES (1, 'Armor Fire', NULL, NULL, NULL)
+VALUES (1, 'Fishfa Rubbers', NULL, NULL, NULL)
 ON DUPLICATE KEY UPDATE id = id;
 
 -- -----------------------------------------------------

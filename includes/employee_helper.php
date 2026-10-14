@@ -1162,7 +1162,7 @@ function getEmployeeById($employeeId)
 }
 
 /**
- * SALES & MARKETING - ON FIELD department check.
+ * Field sales department check (SALES & MARKETING - DOMESTIC / ON FIELD).
  */
 function isSalesOnFieldDepartment($department)
 {
@@ -1177,6 +1177,7 @@ function isSalesOnFieldDepartment($department)
         return false;
     }
     return $n === 'SALES MARKETING ON FIELD'
+        || $n === 'SALES MARKETING DOMESTIC'
         || (strpos($n, 'SALES') !== false && strpos($n, 'ON FIELD') !== false);
 }
 

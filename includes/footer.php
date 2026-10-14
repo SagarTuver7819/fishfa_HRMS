@@ -9,7 +9,7 @@ require_once __DIR__ . '/../config/app.php';
     </div><!-- /.app-shell -->
 <?php endif; ?>
     <footer class="page-footer">
-        <div class="footer-left">2026 &copy; Armor Fire HRMS</div>
+        <div class="footer-left">2026 &copy; Fishfa Rubbers Limited · HRMS</div>
         <div class="footer-right">Designed &amp; Developed by Ocean Infotech</div>
     </footer>
 

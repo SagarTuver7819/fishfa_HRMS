@@ -108,5 +108,5 @@
         applyCase(el);
     });
 
-    window.ArmorCaseForce = { apply: applyCase, bind: bindRoot };
+    window.HrmsCaseForce = { apply: applyCase, bind: bindRoot };
 })();

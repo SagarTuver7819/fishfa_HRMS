@@ -35,7 +35,7 @@ if (!isAdmin() && !isHR() && !canAccess('employees', 'view', $rowDeptId)) {
 $brand = getCompanyDocumentBranding();
 $company = trim((string) ($brand['company_name'] ?? ''));
 if ($company === '') {
-    $company = 'Armor Steel Industries Pvt Ltd';
+    $company = 'Fishfa Rubbers Limited';
 }
 
 $h = static function ($s) {
@@ -145,7 +145,7 @@ $backUrl = app_url('employees/view.php?id=' . $id . ($isLeft ? '&from=exit' : ''
             font-family: inherit;
             font-size: 13px;
         }
-        .bar button.primary { background: #d2232a; }
+        .bar button.primary { background: #0c54a0; }
         .bar .meta { opacity: .9; font-size: 12px; }
         <?php echo companyDocPrintCss(); ?>
         .page {
@@ -179,7 +179,7 @@ $backUrl = app_url('employees/view.php?id=' . $id . ($isLeft ? '&from=exit' : ''
         .cdoc-header-text .cdoc-company {
             font-size: 26px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             margin: 0 0 5px;
             line-height: 1.12;
             text-transform: uppercase;
@@ -236,9 +236,9 @@ $backUrl = app_url('employees/view.php?id=' . $id . ($isLeft ? '&from=exit' : ''
             display: inline-block;
             margin: 0 0 16px;
             padding: 5px 12px;
-            border: 1px solid #fecaca;
-            background: #fef2f2;
-            color: #b91c1c;
+            border: 1px solid #cfe0f3;
+            background: #f3f7fc;
+            color: #08407c;
             font-size: 12.5px;
             font-weight: 800;
             border-radius: 6px;

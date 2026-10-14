@@ -14,7 +14,7 @@ function ensureCompanySettingsSchema($conn)
     $conn->query(
         "CREATE TABLE IF NOT EXISTS company_settings (
             id INT PRIMARY KEY DEFAULT 1,
-            company_name VARCHAR(150) NOT NULL DEFAULT 'Armor Fire',
+            company_name VARCHAR(150) NOT NULL DEFAULT 'Fishfa Rubbers Limited',
             company_logo VARCHAR(255) DEFAULT NULL,
             login_logo VARCHAR(255) DEFAULT NULL,
             dashboard_logo VARCHAR(255) DEFAULT NULL,
@@ -46,7 +46,7 @@ function ensureCompanySettingsSchema($conn)
 
     $conn->query(
         "INSERT INTO company_settings (id, company_name)
-         VALUES (1, 'Armor Fire')
+         VALUES (1, 'Fishfa Rubbers Limited')
          ON DUPLICATE KEY UPDATE id = id"
     );
 
@@ -82,7 +82,7 @@ function getCompanySettings()
 
     $defaultLogo = 'assets/images/logo-placeholder.svg';
     $settings = [
-        'company_name'    => 'Armor Fire',
+        'company_name'    => 'Fishfa Rubbers Limited',
         'login_logo'      => $defaultLogo,
         'dashboard_logo'  => $defaultLogo,
         'company_logo'    => $defaultLogo, // legacy

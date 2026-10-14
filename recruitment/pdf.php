@@ -92,7 +92,7 @@ $cell = static function ($label, $value, $span = 1) {
             padding: 10px 14px;
         }
         .bar button {
-            background: #d2232a;
+            background: #0c54a0;
             color: #fff;
             border: 0;
             padding: 9px 14px;
@@ -110,7 +110,7 @@ $cell = static function ($label, $value, $span = 1) {
         .cdoc-header {
             padding: 12px 14px;
             margin-bottom: 0;
-            background: #fffafa;
+            background: #f6f9fd;
         }
         .cdoc-header-logo { width: 58px; height: 58px; }
         .cdoc-header-text .cdoc-company { font-size: 17px; }
@@ -118,7 +118,7 @@ $cell = static function ($label, $value, $span = 1) {
         .cdoc-footer {
             margin: 0;
             padding: 10px 14px 12px;
-            border-top: 2px solid #d2232a;
+            border-top: 2px solid #0c54a0;
             text-align: left;
         }
         .cand {
@@ -134,9 +134,9 @@ $cell = static function ($label, $value, $span = 1) {
         .badge {
             display: inline-block;
             padding: 4px 10px;
-            border: 1px solid #9f1239;
-            background: #fee2e2;
-            color: #9f1239;
+            border: 1px solid #063263;
+            background: #e3edf8;
+            color: #063263;
             font-size: 10px;
             font-weight: 800;
             text-transform: uppercase;
@@ -152,7 +152,7 @@ $cell = static function ($label, $value, $span = 1) {
             text-transform: uppercase;
             letter-spacing: .05em;
             color: #fff;
-            background: #d2232a;
+            background: #0c54a0;
             border-bottom: 1px solid #111;
             font-weight: 800;
         }

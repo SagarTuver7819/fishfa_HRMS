@@ -95,7 +95,7 @@ if (!defined('APP_BASE')) {
     );
 
     if (!$isLocalHost) {
-        if ($base === '/armor_new_hrms') {
+        if ($base === '/fishfa_rubber') {
             $base = '';
         }
         if (defined('APP_URL') && APP_URL !== '') {

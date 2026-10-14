@@ -18,7 +18,7 @@ ensureRecruitmentTables();
 ensureCompanyContentTables();
 
 $companyName = getCompanyName();
-$displayCompany = 'Armor Steel Industries Pvt. Ltd.';
+$displayCompany = $companyName;
 $history = getCompanyContent('history');
 $hBody = is_array($history['body'] ?? null) ? $history['body'] : companyContentDefaultHistory();
 if (!empty($hBody['company'])) {
@@ -61,7 +61,7 @@ $descQuestions = recruitmentDescriptiveQuestions();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#d2232a">
+    <meta name="theme-color" content="#0c54a0">
     <title>Careers · <?php echo htmlspecialchars($displayCompany); ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -101,7 +101,7 @@ $descQuestions = recruitmentDescriptiveQuestions();
             </div>
             <p class="rec-eyebrow">Join Our Team</p>
             <h1><?php echo htmlspecialchars($displayCompany); ?></h1>
-            <p class="rec-tagline">Brand · ARMOR FIRE · Protecting lives &amp; property</p>
+            <p class="rec-tagline">FISHFA RUBBERS · Creating wealth from waste</p>
             <div class="rec-intro-body">
                 <?php foreach ($introParas as $p): ?>
                     <p><?php echo htmlspecialchars((string) $p); ?></p>
@@ -372,7 +372,7 @@ $descQuestions = recruitmentDescriptiveQuestions();
 
 <footer class="rec-foot">
     <span>&copy; <?php echo date('Y'); ?> <?php echo htmlspecialchars($displayCompany); ?></span>
-    <span>Powered by ARMOR FIRE HRMS</span>
+    <span>Powered by FISHFA RUBBERS HRMS</span>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

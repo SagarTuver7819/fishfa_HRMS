@@ -54,7 +54,7 @@ usort($slots, static function ($a, $b) {
 $brand = getCompanyDocumentBranding();
 $companyName = trim((string) ($brand['company_name'] ?? ''));
 if ($companyName === '') {
-    $companyName = function_exists('getCompanyName') ? getCompanyName() : 'ARMOR';
+    $companyName = function_exists('getCompanyName') ? getCompanyName() : 'Fishfa Rubbers Limited';
 }
 
 $dateDisp = formatDateDisplay($sheet['kpi_date'] ?? '');
@@ -131,7 +131,7 @@ $h = static function ($s) {
             font-family: inherit;
             font-size: 13px;
         }
-        .bar button.primary { background: #d2232a; }
+        .bar button.primary { background: #0c54a0; }
         .bar .meta { opacity: .9; font-size: 12px; }
 
         .page {
@@ -172,7 +172,7 @@ $h = static function ($s) {
         .cdoc-header-text .cdoc-company {
             font-size: 24px;
             font-weight: 800;
-            color: #b91c1c;
+            color: #08407c;
             margin: 0 0 3px;
             line-height: 1.12;
             text-transform: uppercase;

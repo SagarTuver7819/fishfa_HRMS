@@ -36,7 +36,7 @@ function getMastersConfig()
             'table'       => 'departments',
             'folder'      => 'departments',
             'icon'        => 'fa-building',
-            'color'       => '#d2232a',
+            'color'       => '#0c54a0',
             'name_field'  => 'department_name',
             'list_columns'=> [
                 ['key' => 'department_name', 'label' => 'Department'],
@@ -47,7 +47,7 @@ function getMastersConfig()
             'fields' => [
                 ['name' => 'department_name', 'label' => 'Department Name', 'type' => 'text', 'required' => true, 'span' => 2],
                 ['name' => 'icon_class', 'label' => 'Icon Class (Font Awesome)', 'type' => 'text', 'required' => false, 'span' => 1, 'default' => 'fa-building', 'help' => 'e.g. fa-users'],
-                ['name' => 'icon_color', 'label' => 'Icon Color', 'type' => 'color', 'required' => false, 'span' => 1, 'default' => '#d2232a'],
+                ['name' => 'icon_color', 'label' => 'Icon Color', 'type' => 'color', 'required' => false, 'span' => 1, 'default' => '#0c54a0'],
                 ['name' => 'sort_order', 'label' => 'Sort Order', 'type' => 'number', 'required' => false, 'span' => 1, 'default' => 0],
             ],
         ],
@@ -188,7 +188,7 @@ function getMastersConfig()
             'table'       => 'holidays',
             'folder'      => 'holidays',
             'icon'        => 'fa-calendar-days',
-            'color'       => '#E85D75',
+            'color'       => '#0C54A0',
             'name_field'  => 'title',
             'fill_department_options' => true,
             'list_columns'=> [
@@ -361,7 +361,7 @@ function getMastersConfig()
             'table'       => 'products',
             'folder'      => 'products',
             'icon'        => 'fa-box',
-            'color'       => '#C0392B',
+            'color'       => '#08407C',
             'name_field'  => 'product_name',
             'list_columns'=> [
                 ['key' => 'code', 'label' => 'Code'],

@@ -1,5 +1,5 @@
 /**
- * Theme delete confirmation modal (Armor Fire)
+ * Theme delete confirmation modal
  * - .btn-delete[href] → navigate after confirm
  * - window.ConfirmDelete.ask(message, onConfirm, options)
  */

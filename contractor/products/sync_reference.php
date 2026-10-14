@@ -15,8 +15,8 @@ $log = [];
 $ok = true;
 $defaults = [
     'base_url' => 'https://hrms.oceaninfotechcrm.com/software',
-    'app_key' => 'Armor@2025',
-    'username' => 'Armor@Admin',
+    'app_key' => '',
+    'username' => '',
     'password' => '',
 ];
 
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!function_exists('curl_init')) {
             throw new RuntimeException('PHP cURL is required.');
         }
-        $cookieFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'armor_ref_prod_cookies.txt';
+        $cookieFile = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'hrms_ref_prod_cookies.txt';
         @unlink($cookieFile);
 
         [$c1, $loginHtml] = prodRefHttp($base . '/login', $cookieFile);

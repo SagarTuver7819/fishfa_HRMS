@@ -1,6 +1,6 @@
 /**
  * Operations Rate List — daily qty grid
- * Amount formula matches Armor Steel contractor module.
+ * Contractor operations amount formula.
  */
 (function () {
     var grid = document.getElementById('opsGrid');
