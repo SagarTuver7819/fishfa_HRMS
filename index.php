@@ -160,15 +160,111 @@ $selectedRole = isset($_POST['login_as']) && in_array($_POST['login_as'], $uiRol
     <div class="login-bg-glow login-bg-glow-c"></div>
     <div class="login-bg-grid"></div>
     <div class="login-bg-sweep"></div>
-    <span class="login-bg-ring ring-1"></span>
-    <span class="login-bg-ring ring-2"></span>
-    <span class="login-bg-ring ring-3"></span>
-    <span class="login-bg-ring ring-4"></span>
-    <span class="login-bg-dot dot-1"></span>
-    <span class="login-bg-dot dot-2"></span>
-    <span class="login-bg-dot dot-3"></span>
-    <span class="login-bg-dot dot-4"></span>
-    <span class="login-bg-dot dot-5"></span>
+
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <symbol id="rb-tyre" viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="92" fill="#2b2a29"/>
+                <?php for ($i = 0; $i < 36; $i++): ?>
+                <rect x="94" y="2" width="12" height="14" rx="2" fill="#2b2a29" transform="rotate(<?php echo $i * 10; ?> 100 100)"/>
+                <?php endfor; ?>
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#4a4846" stroke-width="3" stroke-dasharray="6 5"/>
+                <circle cx="100" cy="100" r="62" fill="#3a3938"/>
+                <circle cx="100" cy="100" r="46" fill="#0c54a0"/>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="#e7eef8" stroke-width="2"/>
+                <?php for ($i = 0; $i < 6; $i++): ?>
+                <rect x="96" y="62" width="8" height="34" rx="3" fill="#e7eef8" transform="rotate(<?php echo $i * 60; ?> 100 100)"/>
+                <?php endfor; ?>
+                <circle cx="100" cy="100" r="13" fill="#e7eef8"/>
+                <circle cx="100" cy="100" r="6" fill="#0c54a0"/>
+            </symbol>
+            <symbol id="rb-recycle" viewBox="0 0 100 100">
+                <g fill="none" stroke="#0c54a0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M50 14 A36 36 0 0 1 84 40"/>
+                    <path d="M82 60 A36 36 0 0 1 40 85"/>
+                    <path d="M22 72 A36 36 0 0 1 26 26"/>
+                </g>
+                <g fill="#0c54a0">
+                    <path d="M92 34 L84 48 L74 34 Z"/>
+                    <path d="M36 94 L28 80 L44 78 Z"/>
+                    <path d="M16 22 L32 18 L30 34 Z"/>
+                </g>
+            </symbol>
+            <symbol id="rb-drop" viewBox="0 0 40 56">
+                <path d="M20 2 C20 2 4 24 4 36 a16 16 0 0 0 32 0 C36 24 20 2 20 2Z" fill="#f6f9fd" stroke="#0c54a0" stroke-width="2.5"/>
+                <path d="M12 36 a8 8 0 0 0 6 8" fill="none" stroke="#8db8e6" stroke-width="2.5" stroke-linecap="round"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <svg class="rb-tyre rb-tyre-1"><use href="#rb-tyre"/></svg>
+    <svg class="rb-tyre rb-tyre-2"><use href="#rb-tyre"/></svg>
+    <svg class="rb-tyre rb-tyre-3"><use href="#rb-tyre"/></svg>
+    <svg class="rb-recycle"><use href="#rb-recycle"/></svg>
+
+    <svg class="rb-drop rb-drop-1"><use href="#rb-drop"/></svg>
+    <svg class="rb-drop rb-drop-2"><use href="#rb-drop"/></svg>
+    <svg class="rb-drop rb-drop-3"><use href="#rb-drop"/></svg>
+
+    <span class="rb-crumb c1"></span>
+    <span class="rb-crumb c2"></span>
+    <span class="rb-crumb c3"></span>
+    <span class="rb-crumb c4"></span>
+    <span class="rb-crumb c5"></span>
+    <span class="rb-crumb c6"></span>
+    <span class="rb-crumb c7"></span>
+    <span class="rb-crumb c8"></span>
+
+    <div class="rb-road">
+        <svg class="rb-vehicle rb-truck" viewBox="0 0 270 120">
+            <rect x="4" y="74" width="176" height="10" rx="3" fill="#2b2a29"/>
+            <rect x="8" y="40" width="54" height="32" rx="5" fill="#2b2a29"/>
+            <rect x="8" y="66" width="54" height="6" fill="#0c54a0"/>
+            <text x="35" y="61" text-anchor="middle" class="rb-bale-txt">BUTYL</text>
+            <rect x="66" y="40" width="54" height="32" rx="5" fill="#0c54a0"/>
+            <rect x="66" y="66" width="54" height="6" fill="#2b2a29"/>
+            <text x="93" y="61" text-anchor="middle" class="rb-bale-txt">EPDM</text>
+            <rect x="124" y="40" width="54" height="32" rx="5" fill="#2b2a29"/>
+            <rect x="124" y="66" width="54" height="6" fill="#0c54a0"/>
+            <text x="151" y="61" text-anchor="middle" class="rb-bale-txt">WTR</text>
+            <rect x="37" y="8" width="54" height="30" rx="5" fill="#0c54a0"/>
+            <rect x="37" y="32" width="54" height="6" fill="#2b2a29"/>
+            <text x="64" y="27" text-anchor="middle" class="rb-bale-txt">NR</text>
+            <rect x="95" y="8" width="54" height="30" rx="5" fill="#2b2a29"/>
+            <rect x="95" y="32" width="54" height="6" fill="#0c54a0"/>
+            <text x="122" y="27" text-anchor="middle" class="rb-bale-txt">RCB</text>
+            <path d="M184 84 V38 a8 8 0 0 1 8 -8 h38 l26 26 v28 Z" fill="#0c54a0"/>
+            <path d="M200 38 h28 l18 18 h-46 Z" fill="#e7eef8"/>
+            <rect x="184" y="62" width="76" height="4" fill="#08407c"/>
+            <rect x="254" y="70" width="10" height="8" rx="2" fill="#fbbf24"/>
+            <rect x="0" y="84" width="266" height="6" rx="3" fill="#1d1c1b"/>
+            <g class="rb-wheel"><circle class="rb-wheel-glow" cx="42" cy="94" r="24"/><svg x="22" y="74" width="40" height="40" viewBox="0 0 200 200" overflow="visible"><g class="rb-wheel-spin"><use href="#rb-tyre" width="200" height="200"/></g></svg></g>
+            <g class="rb-wheel"><circle class="rb-wheel-glow" cx="118" cy="94" r="24"/><svg x="98" y="74" width="40" height="40" viewBox="0 0 200 200" overflow="visible"><g class="rb-wheel-spin"><use href="#rb-tyre" width="200" height="200"/></g></svg></g>
+            <g class="rb-wheel"><circle class="rb-wheel-glow" cx="222" cy="94" r="24"/><svg x="202" y="74" width="40" height="40" viewBox="0 0 200 200" overflow="visible"><g class="rb-wheel-spin"><use href="#rb-tyre" width="200" height="200"/></g></svg></g>
+        </svg>
+
+        <svg class="rb-vehicle rb-car" viewBox="0 0 200 90">
+            <path d="M8 63 V51 Q8 44 15 42.5 L42 38 L63 21 Q69 16 79 16 H119 Q129 16 136 21.5 L157 38 L184 42 Q194 44 194 52 V63 Q194 69 188 69 H171 A19 19 0 0 0 133 69 H69 A19 19 0 0 0 31 69 H14 Q8 69 8 63 Z" fill="#2b2a29"/>
+            <path d="M49 37 L65 23.5 Q69 20 76 20 H97 V37 Z" fill="#cfe0f3"/>
+            <path d="M102 20 H119 Q126 20 131 24 L148 37 H102 Z" fill="#cfe0f3"/>
+            <path d="M58 30 L66 23.5 Q68 22 72 21.5 L64 30 Z" fill="#ffffff" opacity="0.7"/>
+            <line x1="99.5" y1="38" x2="99.5" y2="66" stroke="#1d1c1b" stroke-width="1.5"/>
+            <line x1="46" y1="38" x2="46" y2="62" stroke="#1d1c1b" stroke-width="1.2"/>
+            <line x1="150" y1="38" x2="150" y2="62" stroke="#1d1c1b" stroke-width="1.2"/>
+            <rect x="84" y="43" width="10" height="2.5" rx="1.2" fill="#8db8e6"/>
+            <rect x="134" y="43" width="10" height="2.5" rx="1.2" fill="#8db8e6"/>
+            <path d="M148 34 h7 l2 5 h-9 Z" fill="#0c54a0"/>
+            <rect x="10" y="51" width="182" height="3.5" fill="#0c54a0"/>
+            <path d="M186 45 h6 q3 0 3 3 v3 h-9 Z" fill="#fbbf24"/>
+            <rect x="8" y="45" width="5" height="6" rx="1.5" fill="#ef4444"/>
+            <rect x="182" y="59" width="13" height="5" rx="2" fill="#1d1c1b"/>
+            <rect x="7" y="59" width="12" height="5" rx="2" fill="#1d1c1b"/>
+            <g class="rb-wheel"><circle class="rb-wheel-glow" cx="50" cy="69" r="19"/><svg x="34" y="53" width="32" height="32" viewBox="0 0 200 200" overflow="visible"><g class="rb-wheel-spin"><use href="#rb-tyre" width="200" height="200"/></g></svg></g>
+            <g class="rb-wheel"><circle class="rb-wheel-glow" cx="152" cy="69" r="19"/><svg x="136" y="53" width="32" height="32" viewBox="0 0 200 200" overflow="visible"><g class="rb-wheel-spin"><use href="#rb-tyre" width="200" height="200"/></g></svg></g>
+        </svg>
+
+        <div class="rb-road-surface"></div>
+    </div>
 </div>
 
 <div class="login-center">
@@ -264,7 +360,7 @@ $selectedRole = isset($_POST['login_as']) && in_array($_POST['login_as'], $uiRol
 
         <footer class="login-card-foot">
             <span class="foot-label">Designed &amp; Developed by</span>
-            <span class="foot-brand">Ocean Infotech</span>
+            <a class="foot-brand" href="https://www.oceaninfotech.co.in/" target="_blank" rel="noopener">Ocean Infotech</a>
         </footer>
     </div>
 

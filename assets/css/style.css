@@ -443,8 +443,8 @@ a {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: #fdecea;
-    color: #c0392b;
+    background: #e7eef8;
+    color: #0c54a0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -452,7 +452,7 @@ a {
 }
 
 .logout-btn:hover {
-    background: #f5c6cb;
+    background: #cfe0f3;
 }
 
 /* -------------------- Dashboard -------------------- */
@@ -4881,7 +4881,7 @@ body.confirm-modal-open {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    border: 2px solid #fde0c4;
+    border: 2px solid #cfe0f3;
 }
 
 .confirm-modal-box h3 {
@@ -4912,6 +4912,15 @@ body.confirm-modal-open {
 
 .confirm-modal-actions .btn-primary:hover {
     box-shadow: 0 8px 20px rgba(220,38,38, 0.35);
+}
+
+.is-brand .confirm-modal-actions .btn-primary {
+    background: linear-gradient(135deg, #0c54a0, #08407c);
+    box-shadow: 0 6px 16px rgba(12, 84, 160, 0.28);
+}
+
+.is-brand .confirm-modal-actions .btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(12, 84, 160, 0.35);
 }
 
 /* =====================================================
@@ -11618,4 +11627,15 @@ body.co-about-open { overflow: hidden; }
 }
 @media (max-width: 900px) {
     .pa-settings-row { grid-template-columns: 1fr; }
+}
+
+.page-footer .footer-right a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-footer .footer-right a:hover {
+    color: #0c54a0;
+    text-decoration: underline;
 }

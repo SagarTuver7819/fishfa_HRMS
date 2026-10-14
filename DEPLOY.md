@@ -1,130 +1,121 @@
-# Fishfa Rubbers HRMS — Git + Live Deploy
+# Fishfa Rubbers HRMS — Live Deploy (MilesWeb)
 
-**Live subdomain:** https://your-hrms-domain.com/  
+**Live URL:** https://fishfa-hrms.oceanhub.co.in/  
 **GitHub:** https://github.com/SagarTuver7819/fishfa_HRMS
 
 ---
 
-## 1) Local → GitHub push
+## 1) cPanel setup (one time)
 
-```bash
-cd c:\xampp\htdocs\fishfa_rubber
-git add .
-git status
-git commit -m "Your message"
-git push origin main
-```
-
-Important:
-- `.env` git ma **nai** jase
-- Live pe alag `.env` banavo
+1. **Subdomain:** cPanel → Domains → `fishfa-hrms.oceanhub.co.in`
+   - Document root note karo (e.g. `/home/CPANELUSER/fishfa-hrms.oceanhub.co.in`)
+2. **PHP:** cPanel → Select PHP Version / MultiPHP Manager → **PHP 8.1+**
+   - Extensions on: `mysqli`, `pdo_mysql`, `mbstring`, `gd`, `zip`, `curl`, `fileinfo`, `intl`
+3. **Database:** cPanel → MySQL Databases
+   - DB create: `CPANELUSER_fishfa_hrms`
+   - User create + strong password
+   - User ne DB ma **ALL PRIVILEGES** aapo
+4. **SSL:** cPanel → SSL/TLS Status → subdomain mate AutoSSL run karo
 
 ---
 
-## 2) Live deploy — your-hrms-domain.com
+## 2) Code upload (Terminal)
 
-### A. cPanel / Hosting
-1. Subdomain confirm: `your-hrms-domain.com`
-2. Document root = project folder (jya `index.php` che) — subdomain **root**, subfolder nahi
-3. PHP **8.0+** enable
-4. MySQL database + user create (note: DB name, user, password)
-5. phpMyAdmin ma import:
-   - `sql/hrms_database.sql`
-   - `sql/employees.sql`
-   - `sql/masters.sql`
-
-### B. Code upload (ek method choose karo)
-
-**Option 1 — Git (best)**
 ```bash
-cd /home/USER/your-hrms-domain.com   # your document root
+cd ~/fishfa-hrms.oceanhub.co.in        # subdomain document root
+ls -A                                  # khali hovu joiye (default files hoy to remove karo)
 git clone https://github.com/SagarTuver7819/fishfa_HRMS.git .
-# next updates:
-git pull origin main
 ```
 
-**Option 2 — ZIP**
-- GitHub → Code → Download ZIP
-- cPanel File Manager → extract in subdomain document root
+---
 
-### C. Live `.env` (server pe create karo)
+## 3) Database import (Terminal)
+
+Local export file: `C:\xampp\db_backups\fishfa_rubber_hrms_live.sql`
+→ cPanel File Manager thi home folder (`~`) ma upload karo, pachi:
+
+```bash
+mysql -u CPANELUSER_dbuser -p CPANELUSER_fishfa_hrms < ~/fishfa_rubber_hrms_live.sql
+rm ~/fishfa_rubber_hrms_live.sql
+```
+
+(Alternative: phpMyAdmin → DB select → Import → file choose.)
+
+---
+
+## 4) Live `.env` (Terminal)
+
+```bash
+cd ~/fishfa-hrms.oceanhub.co.in
+cp .env.example .env
+nano .env
+```
+
+Values:
 
 ```
 APP_ENV=production
-APP_URL=https://your-hrms-domain.com
+APP_URL=https://fishfa-hrms.oceanhub.co.in
 APP_BASE_PATH=
+PUBLIC_APP_URL=https://fishfa-hrms.oceanhub.co.in
 DB_HOST=localhost
 DB_PORT=3306
-DB_NAME=your_live_db_name
-DB_USER=your_live_db_user
-DB_PASS=your_live_db_password
+DB_NAME=CPANELUSER_fishfa_hrms
+DB_USER=CPANELUSER_dbuser
+DB_PASS=your_db_password
+DB_PERSISTENT=0
 APP_TIMEZONE=Asia/Kolkata
 ```
 
-`APP_BASE_PATH=` **empty** rakho (subdomain root mate).
-
-### D. Permissions
-```
-assets/uploads/
-assets/uploads/logo/
-```
-→ writable (`755` or `775`)
-
-### E. Login check
-- Open: https://your-hrms-domain.com/
-- Admin: `admin` / `password123`
-- HR: `hr` / `password123`
-- Dashboard → Department → Employees / Masters
-
-**Live pe password turat change kari lo.**
+`APP_BASE_PATH=` **empty** j rakhvu (subdomain root).
 
 ---
 
-## 3) Local vs Live
+## 5) Permissions (Terminal)
 
-| Item | Local | Live |
-|------|-------|------|
-| URL | http://localhost/fishfa_rubber | https://your-hrms-domain.com |
-| APP_BASE_PATH | `/fishfa_rubber` | *(empty)* |
-| DB | XAMPP `fishfa_rubber_hrms` | hosting DB |
-| Config | local `.env` | live `.env` |
-
-Code same — only `.env` alag.
+```bash
+cd ~/fishfa-hrms.oceanhub.co.in
+chmod 600 .env
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod 644 {} \;
+chmod -R 775 assets/uploads
+```
 
 ---
 
-## 5) Troubleshooting live
+## 6) Check
 
-### CSS missing / plain HTML / links go to `/fishfa_rubber/...`
-**Cause:** Live `.env` ma local values copy thai gaya.
-
-Server `.env` aa rite hova joiye:
-```
-APP_ENV=production
-APP_URL=https://your-hrms-domain.com
-APP_BASE_PATH=
-```
-
-- Open **https://your-hrms-domain.com/** (NOT `/fishfa_rubber/`)
-- `.env` save pachi browser hard refresh: `Ctrl+F5`
-- Latest code: `git pull origin main` (production subdomain auto-fix included)
-
-### 404 on `/fishfa_rubber/`
-Live par aa folder nathi — subdomain root j use karo.
+- https://fishfa-hrms.oceanhub.co.in/ → login page
+- Admin login karo → Dashboard, Employees, Masters check
+- **Live par badha default/test passwords turat change karo.**
 
 ---
 
-## 4) Safe update habit
-1. Local test
-2. `git push origin main`
-3. Server: `git pull origin main`
-4. Live `.env` touch nathi
-5. SQL change hoy to phpMyAdmin ma manually run
-6. Agar `hr` role missing hoy:
+## 7) Future updates
 
-```sql
-ALTER TABLE users MODIFY role ENUM('admin','hr','employee') NOT NULL DEFAULT 'hr';
-INSERT INTO users (username, password, full_name, role, department_id, status)
-VALUES ('hr', 'password123', 'HR Manager', 'hr', 2, 1)
-ON DUPLICATE KEY UPDATE role='hr', password='password123';
+Local:
+```bash
+git add .
+git commit -m "message"
+git push origin main
 ```
+
+Server:
+```bash
+cd ~/fishfa-hrms.oceanhub.co.in
+git pull origin main
+```
+
+Live `.env` and `assets/uploads/` git thi overwrite nathi thata.
+
+---
+
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| CSS missing / links `/fishfa_rubber/...` par jay | `.env` ma `APP_BASE_PATH=` empty, `APP_URL` live URL, pachi `Ctrl+F5` |
+| "Database connection failed" | `.env` DB name/user ma cPanel prefix (`CPANELUSER_`) check karo |
+| 500 error | cPanel → Errors log / `error_log` file jovo; PHP version 8.1+ |
+| Logo/upload save nathi thatu | `chmod -R 775 assets/uploads` |
+| Too many connections | `.env` ma `DB_PERSISTENT=0` |

@@ -52,7 +52,7 @@ html, body { height: 100%; }
     height: 420px;
     top: -8%;
     left: -6%;
-    background: rgba(12, 84, 160, 0.14);
+    background: rgba(12, 84, 160, 0.26);
 }
 
 .login-bg-glow-b {
@@ -68,8 +68,8 @@ html, body { height: 100%; }
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(17, 17, 17, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17, 17, 17, 0.07) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
     animation: gridDrift 28s linear infinite;
@@ -91,7 +91,7 @@ html, body { height: 100%; }
     height: 320px;
     top: 38%;
     left: 58%;
-    background: rgba(12, 84, 160, 0.10);
+    background: rgba(12, 84, 160, 0.22);
     animation: bgGlowOrbit 18s ease-in-out infinite;
 }
 
@@ -118,69 +118,196 @@ html, body { height: 100%; }
     60%, 100% { left: 130%; }
 }
 
-.login-bg-ring {
+/* ---------- Rubber industry scene ---------- */
+
+.rb-tyre,
+.rb-recycle,
+.rb-drop {
     position: absolute;
-    border-radius: 50%;
-    border: 14px solid rgba(12, 84, 160, 0.07);
-    box-shadow: inset 0 0 0 6px rgba(43, 42, 41, 0.035);
     pointer-events: none;
+    overflow: visible;
 }
 
-.login-bg-ring::before {
-    content: "";
-    position: absolute;
-    inset: -14px;
-    border-radius: 50%;
-    border: 3px dashed rgba(12, 84, 160, 0.12);
+.rb-tyre { opacity: 0.42; }
+.rb-tyre-1 { width: 300px; height: 300px; top: -70px; right: -60px; animation: rbSpin 26s linear infinite; }
+.rb-tyre-2 { width: 190px; height: 190px; bottom: 140px; left: -40px; opacity: 0.46; animation: rbSpin 18s linear infinite reverse; }
+.rb-tyre-3 { width: 110px; height: 110px; top: 16%; left: 9%; opacity: 0.38; animation: rbSpin 14s linear infinite, rbFloat 9s ease-in-out infinite; }
+
+.rb-recycle {
+    width: 120px;
+    height: 120px;
+    bottom: 120px;
+    right: 8%;
+    opacity: 0.5;
+    animation: rbSpin 20s linear infinite;
 }
 
-.ring-1 { width: 220px; height: 220px; top: 8%; right: 9%; animation: ringSpin 40s linear infinite, ringFloat 11s ease-in-out infinite; }
-.ring-2 { width: 140px; height: 140px; bottom: 12%; left: 7%; animation: ringSpin 30s linear infinite reverse, ringFloat 9s ease-in-out -3s infinite; }
-.ring-3 { width: 90px; height: 90px; top: 18%; left: 14%; border-width: 9px; animation: ringSpin 22s linear infinite, ringFloat 8s ease-in-out -5s infinite; }
-.ring-4 { width: 170px; height: 170px; bottom: -40px; right: 22%; animation: ringSpin 36s linear infinite reverse, ringFloat 13s ease-in-out -7s infinite; }
-
-@keyframes ringSpin {
+@keyframes rbSpin {
     to { rotate: 360deg; }
 }
 
-@keyframes ringFloat {
+@keyframes rbFloat {
     0%, 100% { translate: 0 0; }
-    50% { translate: 0 -22px; }
+    50% { translate: 0 -18px; }
 }
 
-.login-bg-dot {
+.rb-drop {
+    width: 26px;
+    height: 36px;
+    top: -50px;
+    opacity: 0;
+    animation: rbDrip 7s ease-in infinite;
+}
+
+.rb-drop-1 { left: 24%; }
+.rb-drop-2 { left: 66%; width: 20px; height: 28px; animation-delay: -2.4s; animation-duration: 8s; }
+.rb-drop-3 { left: 84%; width: 16px; height: 22px; animation-delay: -5s; animation-duration: 9s; }
+
+@keyframes rbDrip {
+    0% { transform: translateY(0) scale(0.6); opacity: 0; }
+    12% { transform: translateY(40px) scale(1); opacity: 0.9; }
+    80% { opacity: 0.75; }
+    100% { transform: translateY(105vh) scale(1); opacity: 0; }
+}
+
+.rb-crumb {
     position: absolute;
-    bottom: -20px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(12, 84, 160, 0.22);
-    animation: dotRise 14s linear infinite;
+    top: -20px;
+    width: 9px;
+    height: 7px;
+    background: rgba(43, 42, 41, 0.7);
+    border-radius: 40% 60% 35% 65% / 55% 40% 60% 45%;
+    animation: rbCrumb 11s linear infinite;
     pointer-events: none;
 }
 
-.dot-1 { left: 12%; animation-delay: 0s; }
-.dot-2 { left: 30%; width: 5px; height: 5px; animation-delay: -4s; animation-duration: 18s; }
-.dot-3 { left: 52%; animation-delay: -8s; background: rgba(43, 42, 41, 0.14); }
-.dot-4 { left: 71%; width: 6px; height: 6px; animation-delay: -2s; animation-duration: 16s; }
-.dot-5 { left: 88%; animation-delay: -11s; animation-duration: 20s; }
+.rb-crumb.c1 { left: 6%; animation-delay: -1s; }
+.rb-crumb.c2 { left: 17%; width: 6px; height: 5px; animation-delay: -6s; animation-duration: 13s; }
+.rb-crumb.c3 { left: 33%; background: rgba(12, 84, 160, 0.7); animation-delay: -3s; }
+.rb-crumb.c4 { left: 46%; width: 5px; height: 5px; animation-delay: -9s; animation-duration: 14s; }
+.rb-crumb.c5 { left: 58%; width: 8px; height: 6px; animation-delay: -4.5s; }
+.rb-crumb.c6 { left: 72%; background: rgba(12, 84, 160, 0.7); animation-delay: -7.5s; animation-duration: 12s; }
+.rb-crumb.c7 { left: 87%; width: 6px; height: 6px; animation-delay: -2s; }
+.rb-crumb.c8 { left: 95%; animation-delay: -10s; animation-duration: 15s; }
 
-@keyframes dotRise {
-    0% { transform: translate(0, 0); opacity: 0; }
-    10% { opacity: 1; }
-    50% { transform: translate(24px, -55vh); }
-    90% { opacity: 1; }
-    100% { transform: translate(-12px, -110vh); opacity: 0; }
+@keyframes rbCrumb {
+    0% { transform: translate(0, 0) rotate(0); opacity: 0; }
+    8% { opacity: 1; }
+    50% { transform: translate(18px, 50vh) rotate(200deg); }
+    92% { opacity: 1; }
+    100% { transform: translate(-10px, 102vh) rotate(420deg); opacity: 0; }
+}
+
+/* Road with vehicles - tyres highlighted */
+.rb-road {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    pointer-events: none;
+}
+
+.rb-road-surface {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px;
+    background: linear-gradient(180deg, rgba(43, 42, 41, 0.55), rgba(43, 42, 41, 0.7));
+}
+
+.rb-road-surface::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 8px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, rgba(231, 238, 248, 0.85) 0 26px, transparent 26px 52px);
+    background-size: 52px 2px;
+    animation: rbRoadLine 0.9s linear infinite;
+}
+
+@keyframes rbRoadLine {
+    to { background-position: -52px 0; }
+}
+
+.rb-vehicle {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    overflow: visible;
+    opacity: 0.85;
+    filter: drop-shadow(0 6px 8px rgba(17, 17, 17, 0.18));
+}
+
+.rb-truck {
+    width: 260px;
+    height: 116px;
+    animation: rbDrive 20s linear infinite;
+}
+
+.rb-car {
+    width: 170px;
+    height: 76px;
+    animation: rbDrive 13s linear -7s infinite;
+}
+
+@keyframes rbDrive {
+    from { transform: translateX(-300px); }
+    to { transform: translateX(calc(100vw + 40px)); }
+}
+
+.rb-bale-txt {
+    font: 800 10px "Outfit", sans-serif;
+    letter-spacing: 0.08em;
+    fill: #e7eef8;
+}
+
+.rb-wheel-spin {
+    transform-box: view-box;
+    transform-origin: 100px 100px;
+    animation: rbWheelSpin 0.8s linear infinite;
+}
+
+@keyframes rbWheelSpin {
+    to { transform: rotate(360deg); }
+}
+
+.rb-wheel-glow {
+    fill: rgba(59, 130, 196, 0.25);
+    stroke: #3b82c4;
+    stroke-width: 3;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: rbWheelGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes rbWheelGlow {
+    0%, 100% { transform: scale(0.92); opacity: 0.35; }
+    50% { transform: scale(1.12); opacity: 1; }
+}
+
+.rb-wheel {
+    filter: drop-shadow(0 0 6px rgba(59, 130, 196, 0.85));
 }
 
 @media (max-width: 640px) {
-    .ring-1 { width: 140px; height: 140px; right: -30px; }
-    .ring-3, .ring-4 { display: none; }
+    .rb-tyre-1 { width: 180px; height: 180px; top: -50px; right: -50px; }
+    .rb-tyre-2 { width: 120px; height: 120px; }
+    .rb-tyre-3, .rb-recycle, .rb-drop-3 { display: none; }
+    .rb-road { height: 86px; }
+    .rb-truck { width: 180px; height: 80px; }
+    .rb-car { width: 120px; height: 54px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .login-bg-glow, .login-bg-grid, .login-bg-sweep, .login-bg-ring, .login-bg-dot { animation: none; }
-    .login-bg-dot, .login-bg-sweep { display: none; }
+    .login-bg-glow, .login-bg-grid, .login-bg-sweep, .rb-tyre, .rb-recycle,
+    .rb-road-surface::after, .rb-wheel-spin, .rb-wheel-glow { animation: none; }
+    .rb-vehicle { animation: none; transform: translateX(6vw); }
+    .rb-car { transform: translateX(70vw); }
+    .login-bg-sweep, .rb-drop, .rb-crumb { display: none; }
 }
 
 /* ===================== CENTER ===================== */
@@ -642,6 +769,13 @@ html, body { height: 100%; }
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-card-foot .foot-brand:hover {
+    color: #0c54a0;
+    text-decoration: underline;
 }
 
 .login-copy {

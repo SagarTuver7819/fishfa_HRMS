@@ -53,6 +53,7 @@
         if (yesBtn) yesBtn.innerHTML = defaultYesHtml;
         var iconEl = modal.querySelector('.confirm-modal-icon i');
         if (iconEl) iconEl.className = 'fa-solid fa-triangle-exclamation';
+        modal.classList.remove('is-brand');
     }
 
     function openModal(opts) {
@@ -73,6 +74,7 @@
         if (iconEl) {
             iconEl.className = opts.iconClass || 'fa-solid fa-triangle-exclamation';
         }
+        modal.classList.toggle('is-brand', opts.tone === 'brand');
 
         modal.hidden = false;
         modal.setAttribute('aria-hidden', 'false');
@@ -127,7 +129,8 @@
             title: 'Logout?',
             message: 'Are you sure you want to Logout?',
             yesHtml: '<i class="fa-solid fa-right-from-bracket"></i> Yes, Logout',
-            iconClass: 'fa-solid fa-right-from-bracket'
+            iconClass: 'fa-solid fa-right-from-bracket',
+            tone: 'brand'
         });
     }, true);
 
